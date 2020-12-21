@@ -6,4 +6,4 @@ This site is published at [here]
 
 
 
---- Stay Hungry, Stay Foolish. ---
+Stay Hungry, Stay Foolish.
