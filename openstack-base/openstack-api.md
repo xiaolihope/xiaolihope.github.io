@@ -1,8 +1,4 @@
-+++
-date = "2016-12-09T00:18:36+08:00"
-title = "Openstack API"
-
-+++
+*date = "2016-12-09T00:18:36+08:00"*
 
 ## OpenStack Restful API
 

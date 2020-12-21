@@ -148,8 +148,8 @@ default_aggregation_methods = max,min,sum,count,mean
 [cors.subdomain]
 [database]
 [indexer]
-# mysql connection URL
-# url = mysql+pymysql://gnocchi:gnocchi@127.0.0.1/gnocchi?charset=utf8
+$ mysql connection URL
+$ url = mysql+pymysql://gnocchi:gnocchi@127.0.0.1/gnocchi?charset=utf8
 url =
 [metricd]
 workers = 24

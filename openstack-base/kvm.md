@@ -48,7 +48,7 @@ Chapter3: 构建KVM环境
     if support VT-d: 
         Intel(R) VT for Directed I/O or Intel VT-d 
 check: /proc/cpuinfo flags
-# grep -E '(vmx|svm)' /proc/cpuinfo
+$ grep -E '(vmx|svm)' /proc/cpuinfo
 2. 宿主机(KVM)操作系统的安装
 kvm是基于内核的虚拟化技术,要运行KVM虚拟化环境,安装一个Linux操作系统的宿主机(Host)是必需的. 
 后面会使用自己编译的kernel and qemu-kvm 来进行实验.

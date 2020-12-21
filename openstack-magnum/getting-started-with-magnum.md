@@ -119,11 +119,12 @@ created by magnum" magnum
 
 3. 安装 magnum 
 进入到docker中
+
 ```markdown
 # yum install centos-release-openstack-rocky -y
 # yum install openstack-magnum-api openstack-magnum-conductor python-magnumclient
-
 ```
+
 4. 配置magnum 文件
 ```markdown
 -rw-r----- 1 root magnum 74315 May 15 15:25 magnum.conf
@@ -226,6 +227,7 @@ def cluster_create(self, context, cluster, create_timeout):
 Conductor 会被bay 创建密钥，然后拿到cluster heat driver，然后调用 heat driver 的create_cluster去创建
 3. 调用heat，创建stack
 dixiaoli-repos/magnum/magnum/drivers/heat/driver.py
+
 ```markdown
 def create_cluster(self, context, cluster, cluster_create_timeout):
     stack = self._create_stack(context, clients.OpenStackClients(context),

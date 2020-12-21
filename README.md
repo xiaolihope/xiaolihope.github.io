@@ -1,9 +1,26 @@
-### Welcome to xiaolihope's GitHub Pages. --- 
+### Welcome to xiaolihope's GitHub Pages.
 
-This site is published at [here]
 
-[here]: https://xiaolihope.github.io/
+## DeepLearning
 
+- [Datasets Label](AI-DeepLearning/datasets-label.md)
+
+## MachineLearning
+- [Pycaret](AI-MachineLearning/PyCaret.md)
+- [NaiveBayes](AI-MachineLearning/NaiveBayes.pdf)
+- [BaynesNetwork](AI-MachineLearning/bayesNetwork-dxl.pdf)
+
+## OpenStack Componets
+
+- [Getting Started with HEAT](openstack-heat/getting-started-with-heat.md)
+- [ansible heat integration](openstack-heat/ansible_heat_integration.md)
+- [debug software config](openstack-heat/debug-sc.md)
+- [Heat Guide](openstack-heat/Heat-guide.md)
+- [Getting Started with TROVE](openstack-trove/getting-started-with-trove.md)
+- [Getting Started with MAGNUM](openstack-magnum/getting-started-with-magnum.md)
+- [openstack-telemetry-getting-started](openstack-ceilometer/openstack-telemeter-getting-started.md)
+- [基于时间序列数据的存储](openstack-ceilometer/time-based-storage.md)
+- [gnocchi ha](openstack-ceilometer/gnocchi-ha.md)
 
 ## OpenStack Base
 
@@ -19,25 +36,6 @@ This site is published at [here]
 - [ovs](openstack-base/ovs.md)
 - [rabbitmq](openstack-base/rabbitmq.md)
 - [virsh](openstack-base/virsh.md)
-
-## OpenStack Componets
-
-- [Getting Started with HEAT](openstack-heat/getting-started-with-heat.md)
-- [Getting Started with TROVE](openstack-trove/getting-started-with-trove.md)
-- [Getting Started with MAGNUM](openstack-magnum/getting-started-with-magnum.md)
-- [openstack-telemetry-getting-started](openstack-ceilometer/openstack-telemeter-getting-started.md)
-- [基于时间序列数据的存储](openstack-ceilometer/time-based-storage.md)
-- [gnocchi ha](openstack-ceilometer/gnocchi-ha.md)
-
-
-## DeepLearning
-
-- [Datasets Label](AI-DeepLearning/datasets-label.md)
-
-## MachineLearning
-- [Pycaret](AI-MachineLearning/PyCaret.md)
-- [NaiveBayes](AI-MachineLearning/NaiveBayes.pdf)
-- [BaynesNetwork](AI-MachineLearning/bayesNetwork-dxl.pdf)
 
 
 ## Linux Kernel
