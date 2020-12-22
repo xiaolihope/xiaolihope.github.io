@@ -26,6 +26,7 @@
 
 - [eventlet](openstack-base/eventlet.md)
 - [kvm](openstack-base/kvm.md)
+- [AMQP](openstack-base/AMQP.md)
 - [openstack api](openstack-base/openstack-api.md)
 - [openstack ceph](openstack-base/openstack-ceph.md)
 - [openstack local international](openstack-base/openstack-local-international.md)
@@ -52,14 +53,16 @@
 - [Python](develop/python.md)
 - [python py27 debug](develop/python27-test-debug.md)
 - [sqlalchemy](develop/sqlqlchemy.md)
-- [dataset](develop/dataset.md)
+- [dataset operation](develop/dataset.md)
 - [design-pattern](develop/design-pattern.md)
 - [git](develop/git.md)
 - [linux commands](develop/linux-commands.md)
 - [linux operation](develop/linux-operation.md)
 - [screen](develop/screem.md)
-
-
+- [database summary](develop/database-summary.md)
+- [HA](develop/HA.md)
+- [JAVA多线程](develop/java多线程.md)
+- [Python多线程](develop/python多线程.md)
 
 
 Stay Hungry, Stay Foolish.

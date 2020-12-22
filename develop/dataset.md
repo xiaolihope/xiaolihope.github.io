@@ -34,7 +34,7 @@ sqlite> .show
         echo: off
          eqp: off
      explain: auto
-     headers: off
+     headers: off``
         mode: list
    nullvalue: ""
       output: stdout
