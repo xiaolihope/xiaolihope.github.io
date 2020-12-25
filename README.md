@@ -18,10 +18,7 @@
 - [Heat Guide](openstack-heat/Heat-guide.md)
 - [Getting Started with TROVE](openstack-trove/getting-started-with-trove.md)
 - [Getting Started with MAGNUM](openstack-magnum/getting-started-with-magnum.md)
-- [openstack-telemetry-getting-started](openstack-ceilometer/openstack-telemeter-getting-started.md)
 - [基于时间序列数据的存储](openstack-ceilometer/time-based-storage.md)
-- [gnocchi ha](openstack-ceilometer/gnocchi-ha.md)
-
 ## OpenStack Base
 
 - [eventlet](openstack-base/eventlet.md)
