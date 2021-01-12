@@ -71,7 +71,8 @@ tune
 
 ### High level description
 
-Trove is designed to support a single-tenant database within a Nova instance. There will be no restrictions on how Nova is configured, since Trove interacts with other OpenStack components purely through the API.
+Trove is designed to support a single-tenant database within a Nova instance. There will be no restrictions on how Nova is configured,  
+since Trove interacts with other OpenStack components purely through the API.
 
 ### Trove  API
 

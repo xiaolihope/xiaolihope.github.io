@@ -1,17 +1,8 @@
 ### Welcome to xiaolihope's GitHub Pages.
+**Stay Hungry, Stay Foolish.**
 
-
-## DeepLearning
-
-- [Datasets Label](AI-DeepLearning/datasets-label.md)
-
-## MachineLearning
-- [Pycaret](AI-MachineLearning/PyCaret.md)
-- [NaiveBayes](AI-MachineLearning/NaiveBayes.pdf)
-- [BaynesNetwork](AI-MachineLearning/bayesNetwork-dxl.pdf)
-
-## OpenStack Componets
-
+## OpenStack Components
+### Heat
 - [Getting Started with HEAT](openstack-heat/getting-started-with-heat.md)
 - [ansible heat integration](openstack-heat/ansible_heat_integration.md)
 - [debug software config](openstack-heat/debug-sc.md)
@@ -19,6 +10,14 @@
 - [Getting Started with TROVE](openstack-trove/getting-started-with-trove.md)
 - [Getting Started with MAGNUM](openstack-magnum/getting-started-with-magnum.md)
 - [基于时间序列数据的存储](openstack-ceilometer/time-based-storage.md)
+### Trove
+
+### Nova
+
+### Neutron
+
+### Cinder
+
 ## OpenStack Base
 
 - [eventlet](openstack-base/eventlet.md)
@@ -61,5 +60,11 @@
 - [JAVA多线程](develop/java多线程.md)
 - [Python多线程](develop/python多线程.md)
 
+## DeepLearning
 
-Stay Hungry, Stay Foolish.
+- [Datasets Label](AI-DeepLearning/datasets-label.md)
+
+## MachineLearning
+- [Pycaret](AI-MachineLearning/PyCaret.md)
+- [NaiveBayes](AI-MachineLearning/NaiveBayes.pdf)
+- [BaynesNetwork](AI-MachineLearning/bayesNetwork-dxl.pdf)
