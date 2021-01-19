@@ -1,7 +1,6 @@
----
+# Getting Started with Trove
+
 date: 2017-10-27T09:33:12+08:00
-title: trove getting started
----
 
 ## DBaaS
 ### 定义
@@ -33,7 +32,10 @@ title: trove getting started
 
 ## OpenStack Trove Overview
 
-Trove is the openstack database-as-a-service project to provide scalable and reliable cloud database as a service provisioning functionality for both relation and non-relation database engines, and to continue to improve its fully-featured and extensibles open source framework.
+Trove is the openstack database-as-a-service project to provide scalable
+and reliable cloud database as a service provisioning functionality for
+both relation and non-relation database engines, and to continue to
+improve its fully-featured and extensibles open source framework.
 
 Integrated in the IceHouse release(2014)
 
@@ -55,24 +57,30 @@ tune
 
 ### A typical openstack service architecture
 
-![typical-openstack-service](../images/typical-openstack.png)
+![typical-openstack-service](images/typical-openstack.png)
 
 ### Trove architecture
 
-![trove-archi](../images/trove-architecture.png)
-![trove-archi2](../images/trove-architecutre.png)
-![trove-archi3](../images/trove-architectrue-3.png)
-![trove-archi4](../images/trove-architecture-4.png)
-![trove-archi5](../images/trove-architecture-5.png)
+![trove-archi](images/trove-architecture.png)
+
+![trove-archi2](images/trove-architecutre.png)
+
+![trove-archi3](images/trove-architecture-3.png)
+
+![trove-archi4](images/trove-architecture-4.png)
+
+![trove-archi5](images/trove-architecture-5.png)
 
 ### Trove components
 
-![trove-components](../images/trove-components.png)
+![trove-components](images/trove-components.png)
 
 ### High level description
 
-Trove is designed to support a single-tenant database within a Nova instance. There will be no restrictions on how Nova is configured,  
-since Trove interacts with other OpenStack components purely through the API.
+Trove is designed to support a single-tenant database within a Nova
+instance.  
+There will be no restrictions on how Nova is configured, since Trove
+interacts with other OpenStack components purely through the API.
 
 ### Trove  API
 
@@ -88,7 +96,7 @@ Trove-dashboard: Web UI: https://github.com/openstack/trove-dashboard
 
 ### DatastoreCompatibilityMatrix
 
-![datastore-matrix](../images/datastore-matrix.png)
+![datastore-matrix](images/datastore-matrix.png)
 
 ### Trove 术语
 
@@ -135,8 +143,6 @@ flavor
 
 security-group
 ```
-
-
 
 ### 实例状态
 
@@ -262,18 +268,20 @@ Loading config parameters for datastore (percona) version (percona-5.6)
 
 **创建实例**
 
-实例创建时，task manager 会将数据库配置发送给guest agent。task manager 使用一个模版生成这些配置的值，在默认情况下所选择的模版是config.template，可以通过配置文件(trove-taskmanager.conf)中 template_path 来设置此文件的路径。
-默认情况下，
+实例创建时，task manager 会将数据库配置发送给guest agent。task manager
+使用一个模版生成这些配置的值，
+在默认情况下所选择的模版是config.template，可以通过配置文件(trove-taskmanager.conf)中
+template_path 来设置此文件的路径。 默认情况下，
 ```
 # Datastore templates
 template_path = /etc/trove/templates/
 ```
 
-![trove-create](../images/trove-create.png)
+![trove-create](images/trove-create.png)
 
 **查看实例**
 
-![trove-show](../images/trove-show.png)
+![trove-show](images/trove-show.png)
 
 ```
 # trove create mysql d1 --size 1 --datastore mysql4 --datastore_version mysql-5.6  --nic net-id=1bf5060b-1b7e-4c7c-8e91-61c680a99a42
@@ -595,7 +603,7 @@ trove仅仅执行如下内容：
 
 trove 基于现有实例生成副本的过程：首先生成源的快照（主），然后使用源快照启动副本。快照是一个备份，和trove backup-create 命令生成的备份一样。一旦基于快照启动副本实例，则复制策略将执行命令来配置复制的副本连接到主节点，这些命令取决于复制策略基于binlog，还是GTID。
 
-![trove-replication](../images/trove-replication.png)
+![trove-replication](images/trove-replication.png)
 
 复制策略包含一些优化项以使用最少时间启动一个副本，包括使用现有的快照作为基础生成增量快照，由创建实例时指定–backup 和 --replica-of 参数指定。
 
@@ -1048,11 +1056,11 @@ done
 ```
 ## References
 
-[module-management]:https://specs.openstack.org/openstack/trove-specs/specs/mitaka/module-management.html
-[module-mangement-ordering]:https://specs.openstack.org/openstack/trove-specs/specs/newton/module-mangement-ordering.html
-[datastore-log-operation]: https://specs.openstack.org/openstack/trove-specs/specs/mitaka/datastore-log-operations.html
-[log]: https://review.openstack.org/#/c/250590/23
-[log-operation]: https://review.openstack.org/#/q/topic:bp/datastore-log-operations,n,z
+[module-management](https://specs.openstack.org/openstack/trove-specs/specs/mitaka/module-management.html)
+[module-mangement-ordering](https://specs.openstack.org/openstack/trove-specs/specs/newton/module-mangement-ordering.html)
+[datastore-log-operation](https://specs.openstack.org/openstack/trove-specs/specs/mitaka/datastore-log-operations.html)
+[log](https://review.openstack.org/#/c/250590/23)  
+[log-operation](https://review.openstack.org/#/q/topic:bp/datastore-log-operations,n,z)
 
 ## Others
 

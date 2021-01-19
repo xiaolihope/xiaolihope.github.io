@@ -1,12 +1,26 @@
-*date: 2017-04-05T17:00:47+08:00*
+# Ansible Heat Integration
 
-There is a blog writing [ansible with heat] and the code is [ansible heat code] here.
+date: 2017-04-05T17:00:47+08:00
 
-Another useful blog: [Full stack Automation with ansible and openstack]
+[Rackspace Orchestration document](https://developer.rackspace.com/docs/user-guides/orchestration/ansible/using-ansible-with-heat/)
 
-本文来谈谈heat 和ansible合作，实现更灵活的部署和编排。
-我们知道，heat 是openstack中用于编排的模块，它通过将open stack中的资源（resource）以模版（template）的形式组织起来，我们可以将一组资源，比如虚拟机实例的启动、IP绑定、软件部署等写在一个template里面，heat 通过读取配置文件来完成模版规定的动作：创建虚拟机，associate floatingip，deploy application 等等。Heat 将从这个template中创建出来的一组资源称之为“资源栈”(stack)。当对这一组资源进行操作时，只需要对stack进行操作，所以heat很适合批量资源的创建和销毁。它将一系列繁琐的人工操作自动化了起来。
-Heat Orchestration 包含2层含义：provisioning and deployment
+There is a blog writing
+[ansible with heat](https://keithtenzer.com/2016/05/09/openstack-heat-and-ansible-automation-born-in-the-cloud/)
+and the code is [ansible heat code](https://github.com/ktenzer/openstack-heat-templates/blob/master/ansible/centos-tower.yaml) here.
+
+Another useful blog:
+[Full stack Automation with ansible and openstack](https://github.com/ktenzer/openstack-heat-templates/blob/master/ansible/centos-tower.yaml)
+
+本文来谈谈heat 和ansible合作，实现更灵活的部署和编排。 我们知道，heat
+是openstack中用于编排的模块，它通过将open
+stack中的资源（resource）以模版（template）的形式组织起来，我们可以将一组资源，比如虚拟机实例的启动、IP绑定、软件部署等写在一个template里面，  
+heat 通过读取配置文件来完成模版规定的动作：创建虚拟机，associate
+floatingip，deploy application 等等。  
+Heat
+将从这个template中创建出来的一组资源称之为“资源栈”(stack)。当对这一组资源进行操作时，只需要对stack进行操作，  
+所以heat很适合批量资源的创建和销毁。它将一系列繁琐的人工操作自动化了起来。 Heat
+Orchestration 包含2层含义：provisioning and deployment.
+
 除了资源的部署之外，还有一方面是server上应用软件的安装配置。总结一下，在heat中大体有如下三种方式可以控制server上的配置：
 
 1. 定制image
@@ -46,26 +60,26 @@ manager -- |-- asg 2   \-- node N ..
 
 ```
 resource_registry:
-  "POLEX::Heat::Config": "../templates/polex_heat_config.yaml"
-  "POLEX::Heat::Deploy": "../templates/polex_heat_deploy.yaml"
-  "POLEX::Heat::Keypair": "../templates/polex_heat_keypair.yaml"
-  "POLEX::Heat::Nova::Server": "../templates/polex_heat_nova_server.yaml"
-  "POLEX::Heat::Nova::Server2": "../templates/polex_heat_nova_server2.yaml"
-  "POLEX::Heat::Port": "../templates/polex_heat_port.yaml"
-  "POLEX::Heat::Net": "../templates/polex_heat_net.yaml"
-  "POLEX::Heat::FloatingIP": "../templates/polex_heat_floatingip.yaml"
-  "POLEX::Heat::Snippet": "../templates/polex_heat_snippet.yaml"
-  "POLEX::Heat::Snippet2": "../templates/polex_heat_snippet2.yaml"
-  "POLEX::Heat::Member": "../templates/polex_heat_member.yaml"
-  "POLEX::Heat::Member2": "../templates/polex_heat_member2.yaml"
-  "POLEX::Heat::Manager": "../templates/polex_heat_manager.yaml"
-  "POLEX::Heat::Member::Config": "../templates/polex_heat_member_config.yaml"
-  "POLEX::Heat::Group": "../templates/polex_heat_group.yaml"
-  "POLEX::Heat::Group2": "../templates/polex_heat_group2.yaml"
-  "POLEX::Heat::ExternalResource": "../templates/polex_heat_external_resource.yaml"
+  "SelfDefined::Heat::Config": "../templates/polex_heat_config.yaml"
+  "SelfDefined::Heat::Deploy": "../templates/polex_heat_deploy.yaml"
+  "SelfDefined::Heat::Keypair": "../templates/polex_heat_keypair.yaml"
+  "SelfDefined::Heat::Nova::Server": "../templates/polex_heat_nova_server.yaml"
+  "SelfDefined::Heat::Nova::Server2": "../templates/polex_heat_nova_server2.yaml"
+  "SelfDefined::Heat::Port": "../templates/polex_heat_port.yaml"
+  "SelfDefined::Heat::Net": "../templates/polex_heat_net.yaml"
+  "SelfDefined::Heat::FloatingIP": "../templates/polex_heat_floatingip.yaml"
+  "SelfDefined::Heat::Snippet": "../templates/polex_heat_snippet.yaml"
+  "SelfDefined::Heat::Snippet2": "../templates/polex_heat_snippet2.yaml"
+  "SelfDefined::Heat::Member": "../templates/polex_heat_member.yaml"
+  "SelfDefined::Heat::Member2": "../templates/polex_heat_member2.yaml"
+  "SelfDefined::Heat::Manager": "../templates/polex_heat_manager.yaml"
+  "SelfDefined::Heat::Member::Config": "../templates/polex_heat_member_config.yaml"
+  "SelfDefined::Heat::Group": "../templates/polex_heat_group.yaml"
+  "SelfDefined::Heat::Group2": "../templates/polex_heat_group2.yaml"
+  "SelfDefined::Heat::ExternalResource": "../templates/polex_heat_external_resource.yaml"
 ```
 
-#### POLEX::Heat::Manager
+#### `SelfDefined::Heat::Manager`
 
 ```
 heat_template_version: 2015-04-30
@@ -101,7 +115,7 @@ parameters:
 
 resources:
   p:
-    type: POLEX::Heat::Port
+    type: SelfDefined::Heat::Port
     properties:
       security_groups:
         - get_param: secgroup_id
@@ -110,7 +124,7 @@ resources:
       network: {get_param: network}
 
   m:
-    type: POLEX::Heat::Nova::Server
+    type: SelfDefined::Heat::Nova::Server
     properties:
       image: {get_param: image}
       flavor: {get_param: flavor}
@@ -122,7 +136,7 @@ resources:
         - {get_param: [snippet, set_static_ip, enabled]}
         - {get_param: [snippet, os_collect_config, enabled]}
   d:
-    type: POLEX::Het::Deploy
+    type: SelfDefined::Het::Deploy
     properties:
       config_id: {get_param: config_id}
       server_id: {get_attr: [m, server_id]}
@@ -145,7 +159,7 @@ outputs:
     value: {get_attr: [m, restart_url]}
 ```
 
-#### POLEX::Heat::ExternalResource
+#### `SelfDefined::Heat::ExternalResource`
 
 ```
 heat_template_version: 2013-05-23
@@ -173,7 +187,7 @@ parameters:
 
 resources:
   external_port:
-    type: POLEX::Heat::Port
+    type: SelfDefined::Heat::Port
     properties:
       network: {get_param: network}
   config:
@@ -221,7 +235,7 @@ outputs:
     value: {get_resource: config}
 ```
 
-#### POLEX::Heat::Group
+#### `SelfDefined::Heat::Group`
 
 ```
 heat_template_version: 2015-04-30
@@ -260,7 +274,7 @@ resources:
     type: OS::Heat::AutoScalingGroup
     properties:
       resource:
-        type: POLEX::Heat::Member2
+        type: SelfDefined::Heat::Member2
         properties:
           keypair: {get_param: keypair}
           network: {get_param: network}
@@ -330,13 +344,13 @@ resources:
     type: secgroup.yaml
 
   keypair:
-    type: POLEX::Heat::Keypair
+    type: SelfDefined::Heat::Keypair
 
   snippet:
-    type: POLEX::Heat::Snippet
+    type: SelfDefined::Heat::Snippet
 
   config:
-    type: POLEX::Heat::Member::Config
+    type: SelfDefined::Heat::Member::Config
     properties:
       script:
         str_replace:
@@ -366,7 +380,7 @@ resources:
     type: deploy_contents.yaml
 
   manager:
-    type: POLEX::Heat::Manager
+    type: SelfDefined::Heat::Manager
     properties:
       network: {get_param: internal_network}
       config_id: {get_attr: [config, config_id]}
@@ -376,7 +390,7 @@ resources:
       snippet: {get_attr: [snippet, snippet]}
   db:
     depends_on: [manager]
-    type: POLEX::Heat::Group
+    type: SelfDefined::Heat::Group
     properties:
       manager_id: {get_attr: [manager, server_id]}
       network: {get_param: internal_network}
@@ -429,11 +443,3 @@ EOF
 
 ansible-playbook -i $inventory db.yaml
 ```
-
-## References
-
-[Rackspace Orchestration document]: https://developer.rackspace.com/docs/user-guides/orchestration/ansible/using-ansible-with-heat/
-[ansible with heat]: https://keithtenzer.com/2016/05/09/openstack-heat-and-ansible-automation-born-in-the-cloud/
-[ansible heat code]: https://github.com/ktenzer/openstack-heat-templates/blob/master/ansible/centos-tower.yaml
-
-[Full stack Automation with ansible and openstack]:https://github.com/ktenzer/openstack-heat-templates/blob/master/ansible/centos-tower.yaml

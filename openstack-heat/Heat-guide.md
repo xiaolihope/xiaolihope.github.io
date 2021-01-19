@@ -1,4 +1,6 @@
-*date: 2017-04-24T14:51:14+08:00*
+# Heat Guide
+
+date: 2017-04-24T14:51:14+08:00
 
 ## Heat 历史
 
@@ -156,7 +158,7 @@ heat stack 创建过程分析：
 heat 提供了比较全的基本的template 库: https://github.com/openstack/heat-templates/tree/master/hot 当我们要写template的时候，
 往往可以将此作为参考来写自己的template，会节省很多时间。
 
-[template guide]
+[template guide](https://docs.openstack.org/heat/latest/)
 
 ### heat_template_version
 
@@ -169,6 +171,7 @@ heat 提供了比较全的基本的template 库: https://github.com/openstack/he
 template version决定了，template中使用的resource type 和其支持的函数。
 
 ### description
+
 ### parameters
 parameters的类型有：string | number | json | comma_delimited_list | boolean
 
@@ -284,7 +287,9 @@ template中的nested template 引用文件可以用如下几种方式：
 - Http URL (http://example.com/templates/my_nova.yaml)
 - Https URL (https://example.com/templates/my_nova.yaml)
 
-heat-engine 不会处理nested template中文件的内容，由heatclient来处理，原因是 heat-engine不会访问其所在的机器上的文件（due to security）,这样存在的一个问题是：
+heat-engine 不会处理nested template中文件的内容，由heatclient来处理，原因是
+heat-engine不会访问其所在的机器上的文件（due to
+security),这样存在的一个问题是：
 
 在horizon上创建stack，当template中含有get_file，或者包含子的template文件时，就会报错。
 
@@ -312,7 +317,7 @@ resource_registry:
 
 这样做的好处是，当有多个template 文件用到这个resource type时，修改时只需要修改一个地方。
 
-### netsted attributes
+### nested attributes
 
  要想得到 nested resource 的属性，可以通过 netsted templat 的 output 来得到。需要template version 在 2014-10-16 以上。
 
@@ -346,8 +351,10 @@ outputs:
 
 Now when you use get_resource from the outer template heat will use the nova server id and not the template resource identifier.
 heat resource type
-OS::Heat::AutoScallingGroup
-OS::Heat::ResourceGroup
+
+`OS::Heat::AutoScallingGroup`
+`OS::Heat::ResourceGroup`
+
 using-heat-resourcegroup-resources
 
 ### index的使用
@@ -398,6 +405,7 @@ heat exchange and queues
 | heat     | notifications.info     | notifications.info |
 
 ```
-[template guide]:https://docs.openstack.org/heat/latest/
 
-heat stack-list | grep stack- | awk '{system("heat stack-delete " $2)}'
+```
+heat stack-list | grep stack- | awk '{system("heat stack-delete" $2)}'
+```

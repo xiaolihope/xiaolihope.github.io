@@ -7,15 +7,22 @@
 - [ansible heat integration](openstack-heat/ansible_heat_integration.md)
 - [debug software config](openstack-heat/debug-sc.md)
 - [Heat Guide](openstack-heat/Heat-guide.md)
+### Trove
 - [Getting Started with TROVE](openstack-trove/getting-started-with-trove.md)
+- [Trouble Shooting](openstack-trove/TroubleShooting.md)
+- [Trove CLI](openstack-trove/trove-cli.md)
+- [Trove Deploy](openstack-trove/trove-deploy.md)
+
+- [Trove HA]
+
 - [Getting Started with MAGNUM](openstack-magnum/getting-started-with-magnum.md)
 - [基于时间序列数据的存储](openstack-ceilometer/time-based-storage.md)
-### Trove
 
 ### Nova
 
-### Neutron
+- [Nova boot vm](openstack-nova/boot-vm-from-iso.md)
 
+### Neutron
 ### Cinder
 
 ## OpenStack Base

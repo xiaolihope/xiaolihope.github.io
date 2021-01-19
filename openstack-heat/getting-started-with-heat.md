@@ -2,9 +2,13 @@
 Date: 2016/9/10 17:45:07
 
 [Heat Documentation](https://docs.openstack.org/heat/latest/)
+
 [heat template guide](https://docs.openstack.org/heat/latest/template_guide/index.html)
+
 [heat architecture](https://docs.openstack.org/heat/latest/developing_guides/architecture.html)
+
 [heat resource type](https://docs.openstack.org/heat/latest/template_guide/openstack.html)
+
 [heat software configuration](https://docs.openstack.org/heat/latest/template_guide/software_deployment.html)
 
 ## 1. Heat Introduction
@@ -213,7 +217,8 @@ resources:
 
 Heat提供了多种资源类型来支持对于软件配置和部署的编排，如下所列：
 
-- `OS::Heat::CloudConfig`：VM 引导程序启动时的配置，由OS::Nova::Server 引用
+- `OS::Heat::CloudConfig`：VM 引导程序启动时的配置，由`OS::Nova::Server`
+  引用
 
 - `OS::Heat::SoftwareConfig`：描述软件配置
 
@@ -226,7 +231,7 @@ Heat提供了多种资源类型来支持对于软件配置和部署的编排，�
 - `OS::Heat::StructuredConfig`：和`OS::Heat::SoftwareConfig`
   类似，但是用Map 来表述配置
 
-- `OS::Heat::StructuredDeployment`：执行OS::Heat::StructuredConfig
+- `OS::Heat::StructuredDeployment`：执行`OS::Heat::StructuredConfig`
   对应的配置
 
 - `OS::Heat::StructuredDeploymentsGroup`：对一组VM
