@@ -1,31 +1,30 @@
-### Welcome to xiaolihope's GitHub Pages.
+## Welcome to xiaolihope's GitHub Pages.
 **Stay Hungry, Stay Foolish.**
 
-## OpenStack Components
-### Heat
+### OpenStack Components
+
+#### Heat
 - [Getting Started with HEAT](openstack-heat/getting-started-with-heat.md)
 - [ansible heat integration](openstack-heat/ansible_heat_integration.md)
 - [debug software config](openstack-heat/debug-sc.md)
 - [Heat Guide](openstack-heat/Heat-guide.md)
-### Trove
+
+#### Trove
 - [Getting Started with TROVE](openstack-trove/getting-started-with-trove.md)
 - [Trouble Shooting](openstack-trove/TroubleShooting.md)
 - [Trove CLI](openstack-trove/trove-cli.md)
 - [Trove Deploy](openstack-trove/trove-deploy.md)
 
-- [Trove HA]
 
 - [Getting Started with MAGNUM](openstack-magnum/getting-started-with-magnum.md)
 - [基于时间序列数据的存储](openstack-ceilometer/time-based-storage.md)
 
-### Nova
-
+#### Nova
 - [Nova boot vm](openstack-nova/boot-vm-from-iso.md)
 
-### Neutron
-### Cinder
-
-## OpenStack Base
+#### Neutron
+#### Cinder
+### OpenStack Base
 
 - [eventlet](openstack-base/eventlet.md)
 - [kvm](openstack-base/kvm.md)
@@ -42,7 +41,7 @@
 - [virsh](openstack-base/virsh.md)
 
 
-## Linux Kernel
+### Linux Kernel
 - [memory performance tuning](linux/memory_performance_tuning.md)
 - [KVM性能优化方案](linux/KVM性能优化方案.md)
 - [KVM虚拟机性能测试](linux/KVM虚拟机性能测试.md)
@@ -51,7 +50,7 @@
 - [linux内存管理](linux/linux内存管理.md) 
 
 
-## Develop
+### Develop
 - [Getting go started](develop/getting-go-started.md)
 - [Python](develop/python.md)
 - [python py27 debug](develop/python27-test-debug.md)
@@ -67,11 +66,11 @@
 - [JAVA多线程](develop/java多线程.md)
 - [Python多线程](develop/python多线程.md)
 
-## DeepLearning
+### DeepLearning
 
 - [Datasets Label](AI-DeepLearning/datasets-label.md)
 
-## MachineLearning
+### MachineLearning
 - [Pycaret](AI-MachineLearning/PyCaret.md)
 - [NaiveBayes](AI-MachineLearning/NaiveBayes.pdf)
 - [BaynesNetwork](AI-MachineLearning/bayesNetwork-dxl.pdf)
