@@ -28,24 +28,28 @@
                  link: http://blog.csdn.net/longxibendi/article/details/38146521
             
                 所以如果希望提高服务器的并发量，对服务的相应时间要求不很高的场景可以适当的把swappniess调节的高些。对于并发量不大但希望相应时间小的应用场景可以适当的调小这个参数，比如个人电脑可以直接禁掉swap。
-    3.2 ballooning 
-        内存的ballonning 技术可以使在客户机运行时动态地调整它所占用的宿主机的内存资源,而不需要关闭客户机. 
-        优点: 节约内存和灵活分配内存; 能够被监控和控制
-        缺点: 需要virtio_balloon 驱动; 如果有大量内存需要从客户机回收,会降低客户机的系统性能. 没有自动化的机制来管理  内存的动态增加和减少,可能会使被过度碎片化,内存策略会受影响.
+    3.2 ballooning 内存的ballonning
+    技术可以使在客户机运行时动态地调整它所占用的宿主机的内存资源,而不需要关闭客户机.
+    优点: 节约内存和灵活分配内存; 能够被监控和控制 缺点: 需要virtio_balloon
+    驱动; 如果有大量内存需要从客户机回收,会降低客户机的系统性能.
+    没有自动化的机制来管理内存的动态增加和减少,可能会使被过度碎片化,内存策略会受影响.
     3.3 ksm(Kernel Samepage Merging)
-         简单理解就是可以将host机内容相同的内存合并，节省内存的使用，特别是当vm操作系统都一样的情况，肯定会有很多内容相同的内存，开启了KSM，则会将这些内存合并为一个，当然这个过程会有性能损耗，平均性能降低为10%， 所以开启与否，需要考虑使用场景，如果不注重vm性能，而注重host内存使用率，可以考虑开启，反之 则关闭，在/etc/init.d/下，会有两个服务，服务名称为ksmd和ksmtuned，都需要关闭。
-          (rhel6 and fedora 14)默认是开启的.
-           ref link:KSM: http://searchenterpriselinux.techtarget.com/tip/How-to-improve-KVM-performance-by-adjusting-KSM?utm_content=Linuxclusteract
-          *rhel 6 virtualiation : https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Virtualization_Administration_Guide/chap-KSM.html
-          *kvm optimize: http://www.osforce.cn/course/77/material/
-         判断是否enable ksm:
-                    如果是为了能够run尽可能多的vm在host上，而不care性能的问题， 可以开启ksm, 否则，如果一个server上运行了数量比较少的vm，并且性能是问题， 应该关闭KSM。
-                    最好的选择是： 根据内存情况来判断是否启用KSM。 如果再不起用KSM的情况下，RAM满足VM 的需求，则不需要开启。
-                                            chkconfig ksmd off; chkconfig ksmtuned off; service ksmd off; service ksmtuned off
-                                            如果host的内存紧张的话，最好开启KSM。
-               调整KSM的参数，以达到最好的性能：
-                $cat   /etc/ksmtuned.conf
-                   # Configuration file for ksmtuned.
+    简单理解就是可以将host机内容相同的内存合并，节省内存的使用，特别是当vm操作系统都一样的情况，肯定会有很多内容相同的内存，开启了KSM，则会将这些内存合并为一个，当然这个过程会有性能损耗，平均性能降低为10%，
+    所以开启与否，需要考虑使用场景，如果不注重vm性能，而注重host内存使用率，可以考虑开启，反之
+    则关闭，在/etc/init.d/下，会有两个服务，服务名称为ksmd和ksmtuned，都需要关闭。
+    (rhel6 and fedora 14)默认是开启的. ref link:KSM:
+    http://searchenterpriselinux.techtarget.com/tip/How-to-improve-KVM-performance-by-adjusting-KSM?utm_content=Linuxclusteract
+    *rhel 6 virtualiation :
+    https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Virtualization_Administration_Guide/chap-KSM.html
+    *kvm optimize: http://www.osforce.cn/course/77/material/
+    判断是否enable ksm:
+    如果是为了能够run尽可能多的vm在host上，而不care性能的问题， 可以开启ksm,
+    否则，如果一个server上运行了数量比较少的vm，并且性能是问题， 应该关闭KSM。
+    最好的选择是： 根据内存情况来判断是否启用KSM。
+    如果再不起用KSM的情况下，RAM满足VM 的需求，则不需要开启。 chkconfig ksmd
+    off; chkconfig ksmtuned off; service ksmd off; service ksmtuned off
+    如果host的内存紧张的话，最好开启KSM。 调整KSM的参数，以达到最好的性能： $cat
+    /etc/ksmtuned.conf # Configuration file for ksmtuned.
 # How long ksmtuned should sleep between tuning adjustments
 # KSM_MONITOR_INTERVAL=60
 # Millisecond sleep between ksm scans for 16Gb server.
