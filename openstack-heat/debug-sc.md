@@ -1,18 +1,16 @@
 # Software Config Debug
-Date: 2017/4/6 18:26:07
 
-The general practices to debug a user-provided script at SoftwareConfig: 
+2017/04/06
 
+The general practices to debug a user-provided script at SoftwareConfig:
 1. For cloud-init debug
-
 ```
 nova console-log <vm_uuid>
 ```
-
 2. For os-* tools debug:
 
 step1: 登录到server上查看script是否以及被执行。(根据执行结果来判断）
-
+   
 step2: 如果没有执行，那需要查看是哪个环节出了问题。
 
 a. we can debug the os-collect-config using command:

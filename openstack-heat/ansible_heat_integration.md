@@ -1,25 +1,10 @@
 # Ansible Heat Integration
 
-date: 2017-04-05T17:00:47+08:00
+2017/04/05
 
-[Rackspace Orchestration document](https://developer.rackspace.com/docs/user-guides/orchestration/ansible/using-ansible-with-heat/)
-
-There is a blog writing
-[ansible with heat](https://keithtenzer.com/2016/05/09/openstack-heat-and-ansible-automation-born-in-the-cloud/)
-and the code is [ansible heat code](https://github.com/ktenzer/openstack-heat-templates/blob/master/ansible/centos-tower.yaml) here.
-
-Another useful blog:
-[Full stack Automation with ansible and openstack](https://github.com/ktenzer/openstack-heat-templates/blob/master/ansible/centos-tower.yaml)
-
-本文来谈谈heat 和ansible合作，实现更灵活的部署和编排。 我们知道，heat
-是openstack中用于编排的模块，它通过将open
-stack中的资源（resource）以模版（template）的形式组织起来，我们可以将一组资源，比如虚拟机实例的启动、IP绑定、软件部署等写在一个template里面，  
-heat 通过读取配置文件来完成模版规定的动作：创建虚拟机，associate
-floatingip，deploy application 等等。  
-Heat
-将从这个template中创建出来的一组资源称之为“资源栈”(stack)。当对这一组资源进行操作时，只需要对stack进行操作，  
-所以heat很适合批量资源的创建和销毁。它将一系列繁琐的人工操作自动化了起来。 Heat
-Orchestration 包含2层含义：provisioning and deployment.
+本文来谈谈Heat和Ansible合作，实现更灵活的部署和编排。 我们知道，heat是openstack中用于编排的模块，它通过将OpenStack中的资源 （resource）以模版（template）的形式组织起来，我们可以将一组资源，比如虚拟机实例的启动、IP绑定、软件部署等写在一个template里面，heat通过读取配置文件来完成模版规定的动作：创建虚拟机，associate floatingip，deploy application 等等。  
+Heat将从这个template中创建出来的一组资源称之为“资源栈”(stack)。当对这一组资源进行操作时，只需要对stack进行操作，所以heat很适合批量资源的创建和销毁。它将一系列繁琐的人工操作自动化了起来。 
+Heat Orchestration 包含2层含义：provisioning and deployment.
 
 除了资源的部署之外，还有一方面是server上应用软件的安装配置。总结一下，在heat中大体有如下三种方式可以控制server上的配置：
 
@@ -31,14 +16,14 @@ Orchestration 包含2层含义：provisioning and deployment.
 
 Ansible 是一个很好的部署工具，因此我们可以将ansible和heat结合起来，实现更加灵活、方便开发和debug的部署编排。
 
-## Ansible Tower 和 Heat 集成
+## 1. Ansible Tower 和 Heat 集成
 
-## Ansible Core 和 Heat 集成
+## 2. Ansible Core 和 Heat 集成
 
 ### Deployment Model
 
-一个应用由一个(一些)autoscalling groups组来构成，每个autoscalling group组由由一个或多个节点组成。为了更好的部署和维护应用，我们引入了一个
-manager node, 如下图：
+一个应用由一个(一些)autoscalling groups组来构成，每个autoscalling group组由由一个或多个节点组成。为了更好的部署和维护应用，
+我们引入了一个 manager node, 如下图：
 
 ```
                        /-- node 1
@@ -52,12 +37,11 @@ manager -- |-- asg 2   \-- node N ..
 
 ```
 
-### 自定义 resource types
+### 自定义resource types
 
-`heat-resources-customized` project提供了一个共享的自定义heat resource type，这些自定义的资源类型用于更方便地部署／维护复杂的应用编排。
+`heat-resources-customized` project提供了一个共享的自定义heat resource type，这些自定义的资源类型用于更方便地部署/维护复杂的应用编排。
 
-新增的resource type 如下：
-
+新增resource type 如下：
 ```
 resource_registry:
   "SelfDefined::Heat::Config": "../templates/polex_heat_config.yaml"
@@ -78,9 +62,7 @@ resource_registry:
   "SelfDefined::Heat::Group2": "../templates/polex_heat_group2.yaml"
   "SelfDefined::Heat::ExternalResource": "../templates/polex_heat_external_resource.yaml"
 ```
-
 #### `SelfDefined::Heat::Manager`
-
 ```
 heat_template_version: 2015-04-30
 
@@ -158,9 +140,7 @@ outputs:
     description: url to restart the instance.
     value: {get_attr: [m, restart_url]}
 ```
-
 #### `SelfDefined::Heat::ExternalResource`
-
 ```
 heat_template_version: 2013-05-23
 parameters:
@@ -236,7 +216,6 @@ outputs:
 ```
 
 #### `SelfDefined::Heat::Group`
-
 ```
 heat_template_version: 2015-04-30
 parameters:
@@ -312,15 +291,12 @@ outputs:
 ```
 
 ### 部署模版
-
-`heat-orchestrate-application` project  提供了部署application的ansible playbok roles 和 heat 部署模版 以及部署需要的脚本。
-
+`heat-orchestrate-application` project提供了部署application的ansible playbok roles和heat部署模版以及部署需要的脚本。
 ```
 heat_template_version: 2015-04-30
 #
 # Heat OpenStack Template - HOST
 #
-
 parameters:
   external_network:
     type: string
@@ -337,18 +313,13 @@ parameters:
   flavor:
     type: string
     default: m1.medium
-
 resources:
-
   secgroup:
     type: secgroup.yaml
-
   keypair:
     type: SelfDefined::Heat::Keypair
-
   snippet:
     type: SelfDefined::Heat::Snippet
-
   config:
     type: SelfDefined::Heat::Member::Config
     properties:
@@ -375,10 +346,8 @@ resources:
           params:
             id_rsa_contents: {get_attr: [keypair, private_key]}
             deploy_contents: {get_attr: [deploy_contents, contents]}
-
   deploy_contents:
     type: deploy_contents.yaml
-
   manager:
     type: SelfDefined::Heat::Manager
     properties:
@@ -404,9 +373,7 @@ resources:
         /opt/heater/scripts/db.sh ${member_ip}
       desired_capacity: 1
 ```
-
 cat `deploy_contents.yaml`
-
 ```
 #!/bin/bash
 cd `dirname ${BASH_SOURCE[0]}`/..
@@ -421,9 +388,7 @@ cd `dirname ${BASH_SOURCE[0]}`/..
     done
 ) > heat/deploy_contents.yaml
 ```
-
 cat `db.sh`
-
 ```
 function append_host {
     local ip=$1
@@ -440,6 +405,11 @@ cat > $host_vars/$host << EOF
 hostname: $host
 management_ip_address: $ip
 EOF
-
 ansible-playbook -i $inventory db.yaml
 ```
+
+## Reference
+- [Rackspace Orchestration document](https://developer.rackspace.com/docs/user-guides/orchestration/ansible/using-ansible-with-heat/)
+- [ansible with heat](https://keithtenzer.com/2016/05/09/openstack-heat-and-ansible-automation-born-in-the-cloud/)
+- [ansible heat code](https://github.com/ktenzer/openstack-heat-templates/blob/master/ansible/centos-tower.yaml)
+- [Full stack Automation with ansible and openstack](https://github.com/ktenzer/openstack-heat-templates/blob/master/ansible/centos-tower.yaml)

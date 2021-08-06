@@ -1,7 +1,9 @@
 ## Welcome to xiaolihope's GitHub Pages.
 **Stay Hungry, Stay Foolish.**
 
-### OpenStack Components
+### 1. OpenStack Components
+
+#### OpenStack HA
 
 #### Heat
 - [Getting Started with HEAT](openstack-heat/getting-started-with-heat.md)
@@ -14,10 +16,10 @@
 - [Trouble Shooting](openstack-trove/TroubleShooting.md)
 - [Trove CLI](openstack-trove/trove-cli.md)
 - [Trove Deploy](openstack-trove/trove-deploy.md)
-
-
-- [Getting Started with MAGNUM](openstack-magnum/getting-started-with-magnum.md)
 - [基于时间序列数据的存储](openstack-ceilometer/time-based-storage.md)
+
+### Magnum
+- [Getting Started with MAGNUM](openstack-magnum/getting-started-with-magnum.md)
 
 #### Nova
 - [Nova boot vm](openstack-nova/boot-vm-from-iso.md)
@@ -25,7 +27,7 @@
 #### Neutron
 #### Cinder
 
-### Docker
+
 ### OpenStack Base
 
 - [eventlet](openstack-base/eventlet.md)
@@ -42,8 +44,10 @@
 - [rabbitmq](openstack-base/rabbitmq.md)
 - [virsh](openstack-base/virsh.md)
 
+### 2. Docker
+### 3. k8s
 
-### Linux Kernel
+### 4. Linux Kernel AND kvm performance tuning
 - [memory performance tuning](linux/memory_performance_tuning.md)
 - [KVM性能优化方案](linux/KVM性能优化方案.md)
 - [KVM虚拟机性能测试](linux/KVM虚拟机性能测试.md)
@@ -69,7 +73,6 @@
 - [Python多线程](develop/python多线程.md)
 
 ### DeepLearning
-
 - [Datasets Label](AI-DeepLearning/datasets-label.md)
 
 ### MachineLearning

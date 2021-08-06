@@ -1,15 +1,9 @@
 # Heat Guide
-
-date: 2017-04-24T14:51:14+08:00
-
+2017/04/24
 ## Heat 历史
-
 由AWS的Cloud Formation 演化而来，是openstack中负责Orchestration的service。
-
 ## Heat Install
-
 ### Heat手动部署
-
 ### Devstack Install Heat
 ```
 step1: git clone devstack
@@ -17,7 +11,6 @@ step2: tool/create-stack-user
 step3: su stack
 step4: prepare local.conf
 ```
-
 ```
 cat local.conf
 
@@ -28,15 +21,11 @@ RABBIT_PASSWORD=$ADMIN_PASSWORD
 SERVICE_PASSWORD=$ADMIN_PASSWORD
 SERVICE_TOKEN=$ADMIN_PASSWORD
 GIT_BASE=https://git.openstack.org
-
 SERVICE_TIMEOUT=180
 API_WORKERS=1
-
 REGION_NAME=RegionOne
 KEYSTONE_TOKEN_FORMAT=UUID
-
 OS_BRANCH=master
-
 # Neutron services
 disable_service n-net
 enable_service q-svc q-agt q-dhcp q-l3 q-meta neutron
@@ -45,10 +34,8 @@ enable_service q-lbaasv2
 NEUTRON_LBAAS_SERVICE_PROVIDERV2='LOADBALANCERV2:Haproxy:neutron_lbaas.drivers.haproxy.plugin_driver.HaproxyOnHostPluginDriver:default'
 disable_service q-lbaasv1 q-lbaas
 LIBS_FROM_GIT+=',python-neutronclient'
-
 # Tempest
 disable_service tempest
-
 # Heat services
 HEAT_ENABLE_ADOPT_ABANDON=True
 enable_plugin heat https://git.openstack.org/openstack/heat
@@ -57,32 +44,23 @@ IMAGE_URL_SITE="http://download.fedoraproject.org"
 IMAGE_URL_PATH="/pub/fedora/linux/releases/25/CloudImages/x86_64/images/"
 IMAGE_URL_FILE="Fedora-Cloud-Base-25-1.3.x86_64.qcow2"
 IMAGE_URLS+=","$IMAGE_URL_SITE$IMAGE_URL_PATH$IMAGE_URL_FILE
-
-
 # Ceilometer services
 #CEILOMETER_BACKEND=mongodb
 #CEILOMETER_PIPELINE_INTERVAL=600
 #enable_plugin ceilometer https://git.openstack.org/openstack/ceilometer $OS_BRANCH
-
 # Enable the aodh alarming services
 #enable_plugin aodh https://git.openstack.org/openstack/aodh $OS_BRANCH
-
 # Enable gnocchi services
 #enable_plugin gnocchi https://git.openstack.org/openstack/gnocchi $OS_BRANCH
-
 # Sahara services
 #enable_plugin sahara https://git.openstack.org/openstack/sahara $OS_BRANCH
-
 # Zaqar service
 #enable_plugin zaqar https://git.openstack.org/openstack/zaqar $OS_BRANCH
-
 # Senlin service
 #enable_plugin senlin https://git.openstack.org/openstack/senlin $OS_BRANCH
 #LIBS_FROM_GIT+=',python-senlinclient'
-
 # Magnum service
 #enable_plugin magnum https://git.openstack.org/openstack/magnum $OS_BRANCH
-
 # Murano service
 enable_plugin murano https://git.openstack.org/openstack/murano $OS_BRANCH
 
@@ -120,13 +98,9 @@ enabled=True
 ```
 step5: Run ./stack.sh
 
-heat.conf 文件解析：
-...
-
 ## Heat Architecture
 
 heat 由以下组件构成：
-
 ```
 python-heatclient
 heat-api
@@ -135,13 +109,9 @@ heat-engine
 heat-cfntools
 ```
 ### heat template and stack
-
 ### nested stack
-
 ## Heat 功能
-
 heat提供了如下功能：
-
 ### heat stack-create
 ```
 -f  指定模版文件
@@ -150,18 +120,13 @@ heat提供了如下功能：
 -r 允许在 创建／更新 失败的时候回滚， 创建回滚就是会删除失败的stack，就好像没有创建过一样；更新回滚就是回到更新之前的状态
 ```
 heat stack 创建过程分析：
-
 ### heat stack-update
-
 ## heat template
-
-heat 提供了比较全的基本的template 库: https://github.com/openstack/heat-templates/tree/master/hot 当我们要写template的时候，
-往往可以将此作为参考来写自己的template，会节省很多时间。
-
+heat 提供了比较全的基本的template库:[Heat Template](https://github.com/openstack/heat-templates/tree/master/hot).
+当我们要写template的时候， 往往可以将此作为参考来写自己的template，会节省很多时间。
 [template guide](https://docs.openstack.org/heat/latest/)
 
 ### heat_template_version
-
 有两种写法：
 
 - heat_template_version: 2013-05-23
@@ -171,35 +136,25 @@ heat 提供了比较全的基本的template 库: https://github.com/openstack/he
 template version决定了，template中使用的resource type 和其支持的函数。
 
 ### description
-
 ### parameters
 parameters的类型有：string | number | json | comma_delimited_list | boolean
-
 ### heat environment
 Heat environment 中主要包含两个部分：
-
 #### parameters：A list of key/value pairs.
 #### resource_registry ：Definition of custom resources.
 
 这个特性的好处是，当有更改时，只需要更改自定义文件的template 文件一个地方。
-
 environment 有 user environment 和 global environment 两种，前者优先级高于后者。
-
 heat.conf中定义了 environment_dir，默认是：/etc/heat/environment.d ，
-
 当heat-engine起来的时候，会加载。可以将一些自定义的resource type放在此目录下作为global environment。
-
 对于提供给客户的模版样例，个人推荐使用global enironment来增加自定义resource type，这样方便复用，对于用户来说的限制是，只能更改template中定义的parameter。
 
 ### Example use user environment
 ```
 cat env.yaml
-
 resource_registry:
   "OS::NestedServer": "file:///etc/heat/templates/nested.yaml"
-
 cat server.yaml
-
 heat_template_version: 2013-05-23
 parameters:
   flavor:
@@ -263,11 +218,8 @@ resources:
 `heat stack-create -f server-2.yaml stack02`
 
 ### template condition
-
 ### template composion
-
 ### composition
-
 当需要写一个比较复杂的template的时候，往往需要将其分成几个小的template，然后再用template resource将这些合并成一个template。
 用template 来定义resource，可以实现：
 
@@ -300,15 +252,12 @@ fix 之后，horizon上的template可以使用nested template，但是只能使�
 将template file name 作为type
 ```
 heat_template_version: 2015-04-30
-
 resources:
   my_server:
     type: my_nova.yaml
     properties:
       key_name: my_key
-
 ```
-
 定义新的resource type
 ```
 resource_registry:
@@ -318,16 +267,12 @@ resource_registry:
 这样做的好处是，当有多个template 文件用到这个resource type时，修改时只需要修改一个地方。
 
 ### nested attributes
-
- 要想得到 nested resource 的属性，可以通过 netsted templat 的 output 来得到。需要template version 在 2014-10-16 以上。
-
+要想得到 nested resource 的属性，可以通过 netsted templat 的 output 来得到。需要template version 在 2014-10-16 以上。
 ```
 heat_template_version: 2015-04-30
-
 resources:
 my_server:
 type: my_nova.yaml
-
 outputs:
 test_out:
 value: {get_attr: my_server, resource.server, first_address}
@@ -339,11 +284,9 @@ If you wish to be able to return the ID of one of the inner resources instead of
 you can add the special reserved output OS::stack_id to your template resource
 ```
 heat_template_version: 2015-04-30
-
 resources:
   server:
     type: OS::Nova::Server
-
 outputs:
   OS::stack_id:
     value: {get_resource: server}
@@ -351,12 +294,9 @@ outputs:
 
 Now when you use get_resource from the outer template heat will use the nova server id and not the template resource identifier.
 heat resource type
-
 `OS::Heat::AutoScallingGroup`
 `OS::Heat::ResourceGroup`
-
 using-heat-resourcegroup-resources
-
 ### index的使用
 ```
 net_computes:
@@ -388,24 +328,17 @@ net_computes:
         ips: {get_param: ips}
 ```
 ## Heat Notifications
-
 openstack notification 用于通知用户或者开发者当前请求执行的状态
-
 ### heat enable notification
-
 ```
 heat.conf: notification_driver=messagingv2
 ```
 heat exchange and queues
-
 ```
 |  source  |          destination   |    routing_key     |
 +--------------+——————————————————————+———————————————---+
 | heat     | notifications.error    | notifications.error|
 | heat     | notifications.info     | notifications.info |
 
-```
-
-```
 heat stack-list | grep stack- | awk '{system("heat stack-delete" $2)}'
 ```
