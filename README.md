@@ -1,27 +1,36 @@
-## Welcome to xiaolihope's GitHub Pages.  **Stay Hungry, Stay Foolish.**
+## Welcome to xiaolihope's GitHub Pages.
+**Stay Hungry, Stay Foolish.**
 ## 1. Cloud Computing IaaS
 ### 1.1 OpenStack Components
+
 #### 1.1.1 Nova
 - [Nova boot vm](openstack-nova/boot-vm-from-iso.md)
+
 #### 1.1.2 Neutron
 #### 1.1.3 Cinder
+
 #### 1.1.4 Heat
 - [Getting Started with HEAT](openstack-heat/getting-started-with-heat.md)
 - [ansible heat integration](openstack-heat/ansible_heat_integration.md)
 - [debug software config](openstack-heat/debug-sc.md)
 - [Heat Guide](openstack-heat/Heat-guide.md)
+
 #### 1.1.5 Trove
 - [Getting Started with TROVE](openstack-trove/getting-started-with-trove.md)
 - [Trouble Shooting](openstack-trove/TroubleShooting.md)
 - [Trove CLI](openstack-trove/trove-cli.md)
 - [Trove Deploy](openstack-trove/trove-deploy.md)
 - [基于时间序列数据的存储](openstack-ceilometer/time-based-storage.md)
+
 #### 1.1.6 Magnum
 - [Getting Started with MAGNUM](openstack-magnum/getting-started-with-magnum.md)
+
 #### 1.1.7 Services
 - [redis]
 - [mongodb]
+
 ### 1.2 OpenStack HA
+
 ### 1.3 OpenStack Base
 - [eventlet](openstack-base/eventlet.md)
 - [kvm](openstack-base/kvm.md)
@@ -36,11 +45,15 @@
 - [ovs](openstack-base/ovs.md)
 - [rabbitmq](openstack-base/rabbitmq.md)
 - [virsh](openstack-base/virsh.md)
+
 ## 2. Cloud Computing PaaS
+
 ### 2.1 Docker
+
 ### 2.2 k8s
 
 ## 3. Cloud Computing SaaS
+
 ## 4. Linux Kernel AND KVM performance tuning
 - [memory performance tuning](linux/memory_performance_tuning.md)
 - [KVM性能优化方案](linux/KVM性能优化方案.md)
@@ -48,6 +61,7 @@
 - [linux perf related commands](linux/linux-perf-related-commands.md)
 - [linux memory performance test tool](linux/linux_memory_performance_test_tool.md)
 - [linux内存管理](linux/linux内存管理.md)
+
 ## 5. Develop Base
 - [Getting go started](develop/getting-go-started.md)
 - [Python知识点](develop/python.md)
@@ -69,6 +83,7 @@
 
 ## 6. DeepLearning
 - [Datasets Label](AI-DeepLearning/datasets-label.md)
+
 ## 7. MachineLearning
 - [Pycaret](AI-MachineLearning/PyCaret.md)
 - [NaiveBayes](AI-MachineLearning/NaiveBayes.pdf)
@@ -76,4 +91,5 @@
 
 ## 8. Reading Notes
 - [金字塔原理](多读书/金字塔原理.md)
+
 ## 9. Fitness Notes
