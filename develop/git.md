@@ -198,3 +198,21 @@ Date:   Wed Nov 4 17:32:29 2015 +0000
     Change-Id: Ibdf985654ebfa60205068b167a37600f7ed4c1f4
     (cherry picked from commit dcc838128e0812a760733f24a65f09bcd047a399)
 ubuntu@devstack-drf:/opt/stack/horizon$
+
+
+## windows上git bash中文显示乱码
+右键->options->Text->Locale->UTF-8->Apply
+then
+`git config --global core.quotepath false`
+
+## windows上用git bash提交代码到git repositories
+git push时，填入personal access tokens即可。
+
+## github加速
+在公司访问github时，很慢，于是找到以下加速方法：
+
+- method1：github镜像访问
+
+`https://github.com.cnpmjs.org`
+`https://hub.fastgit.org`
+

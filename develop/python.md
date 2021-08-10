@@ -1,3 +1,4 @@
+## Python GIL
 ## with...as
 with ... as 是为了替换传统的 try... finally 
 基本思想是with所求值的对象必须有一个__enter__()方法，一个__exit__()方法。
