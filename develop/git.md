@@ -208,11 +208,14 @@ then
 ## windows上用git bash提交代码到git repositories
 git push时，填入personal access tokens即可。
 
+github -> settings -> Developer settings -> Personal access tokens, choose Generate new token.
+
 ## github加速
 在公司访问github时，很慢，于是找到以下加速方法：
 
 - method1：github镜像访问
 
 `https://github.com.cnpmjs.org`
+
 `https://hub.fastgit.org`
 
