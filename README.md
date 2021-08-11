@@ -62,8 +62,9 @@
 - [linux memory performance test tool](linux/linux_memory_performance_test_tool.md)
 - [linux内存管理](linux/linux内存管理.md)
 
-## 5. Develop Base
+## 5. Develop Base Knowledge
 - [Getting go started](develop/getting-go-started.md)
+- [Python多线程](develop/python并发编程与多线程.md)
 - [Python知识点](develop/python.md)
 - [算法](develop/algorithm.md)
 - [python py27 debug](develop/python27-test-debug.md)
@@ -77,7 +78,6 @@
 - [database summary](develop/database-summary.md)
 - [HA](develop/HA.md)
 - [JAVA多线程](develop/java多线程.md)
-- [Python多线程](develop/python多线程.md)
 - [Pycharm配置远程项目]
 - [Docker里代码debug]
 
