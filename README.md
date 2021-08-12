@@ -56,6 +56,7 @@
 
 ### 1.4 OpenStack Deploy
 - [Kolla Ansible](openstack-deploy/kolla-ansible.md)
+- [Ubuntu Install Ussuri OpenStack By Kolla](openstack-deploy/ubuntu-install-kolla.md)
 
 ## 2. Cloud Computing PaaS
 
