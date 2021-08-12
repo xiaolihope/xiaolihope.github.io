@@ -55,7 +55,7 @@
 - [virsh](openstack-base/virsh.md)
 
 ### 1.4 OpenStack Deploy
-- [Kolla Ansible](openstack-deploy/kolla.md)
+- [Kolla Ansible](openstack-deploy/kolla-ansible.md)
 
 ## 2. Cloud Computing PaaS
 
