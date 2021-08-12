@@ -54,6 +54,8 @@
 - [rabbitmq](openstack-base/rabbitmq.md)
 - [virsh](openstack-base/virsh.md)
 
+### 1.4 OpenStack Deploy
+- [kolla-Ansible](openstack-deploy/kolla-ansible.md)
 ## 2. Cloud Computing PaaS
 
 ### 2.1 Docker
