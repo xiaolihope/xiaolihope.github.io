@@ -57,6 +57,7 @@
 ### 1.4 OpenStack Deploy
 - [Kolla Ansible](openstack-deploy/kolla-ansible.md)
 - [Ubuntu Install Ussuri OpenStack By Kolla](openstack-deploy/ubuntu-install-kolla.md)
+- [Debug Nova code in Docker](openstack-deploy/debug-nova-docker.md)
 
 ## 2. Cloud Computing PaaS
 
@@ -91,7 +92,7 @@
 - [HA](develop/HA.md)
 - [JAVA多线程](develop/java多线程.md)
 - [Pycharm配置远程项目]
-- [Docker里代码debug]
+
 
 ## 6. DeepLearning
 - [Datasets Label](AI-DeepLearning/datasets-label.md)
