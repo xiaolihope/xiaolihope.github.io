@@ -11,6 +11,7 @@
 - [Nova boot vm](openstack-nova/boot-vm-from-iso.md)
 - [Libvirt Create VM](openstack-nova/libvirt-create-vm.md)
 - [VM Evaluate](openstack-nova/vm-evaluate.md)
+- [vm cpu性能优化](openstack-nova/cpu优化.md)
 
 #### 1.1.2 Neutron
 
@@ -92,6 +93,7 @@
 - [HA](develop/HA.md)
 - [JAVA多线程](develop/java多线程.md)
 - [Pycharm配置远程项目]
+- [Windows](develop/windows.md)
 
 
 ## 6. DeepLearning

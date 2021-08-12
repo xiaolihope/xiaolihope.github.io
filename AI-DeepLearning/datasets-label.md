@@ -1,5 +1,4 @@
 ## labelme vs others
-
 - [semantic-segmentation-editor](https://github.com/Hitachi-Automotive-And-Industry-Lab/semantic-segmentation-editor)
 - [labelme](https://github.com/wkentaro/labelme)
 
