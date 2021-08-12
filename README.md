@@ -38,7 +38,7 @@
 
 ### 1.2 OpenStack HA
 - [OpenStack HA](openstack-ha/openstack-ha.md)
-
+- [MySQL HA](openstack-ha/MySQL-HA.md)
 ### 1.3 OpenStack Base
 - [eventlet](openstack-base/eventlet.md)
 - [kvm](openstack-base/kvm.md)
