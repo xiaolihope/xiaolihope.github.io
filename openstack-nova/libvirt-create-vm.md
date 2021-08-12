@@ -1,5 +1,5 @@
 # Libvirt create VM
-date: 2018-03-13T11:40:36+08:00
+2018/03/13
 
 本文介绍用libvirt 启动vm
 
