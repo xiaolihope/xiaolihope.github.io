@@ -1,0 +1,1 @@
+## MHA+MySQL主备配置以及failover

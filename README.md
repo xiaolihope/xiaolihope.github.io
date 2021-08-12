@@ -40,6 +40,8 @@
 ### 1.2 OpenStack HA
 - [OpenStack HA](openstack-ha/openstack-ha.md)
 - [MySQL HA](openstack-ha/MySQL-HA.md)
+- [MHA + MySQL主备](openstack-ha/MHA_MySQL_failover.md)
+
 ### 1.3 OpenStack Base
 - [eventlet](openstack-base/eventlet.md)
 - [kvm](openstack-base/kvm.md)
