@@ -5,12 +5,15 @@
 
 #### 1.1.1 Nova
 - [Getting Started with Nova](openstack-nova/Getting-Started-with-Nova.md)
+- [Nova Placement](openstack-nova/nova-placement.md)
+- [Nova Cell](openstack-nova/nova-cell.md)
 - [Nova Create VM Analysis](openstack-nova/Nova-Create-VM.md)
 - [Nova boot vm](openstack-nova/boot-vm-from-iso.md)
 - [Libvirt Create VM](openstack-nova/libvirt-create-vm.md)
 - [VM Evaluate](openstack-nova/vm-evaluate.md)
 
 #### 1.1.2 Neutron
+
 #### 1.1.3 Cinder
 
 #### 1.1.4 Heat
@@ -34,6 +37,7 @@
 - [mongodb]
 
 ### 1.2 OpenStack HA
+- [OpenStack HA](openstack-ha/openstack-ha.md)
 
 ### 1.3 OpenStack Base
 - [eventlet](openstack-base/eventlet.md)
