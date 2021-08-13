@@ -115,6 +115,6 @@
 - [BaynesNetwork](AI-MachineLearning/bayesNetwork-dxl.pdf)
 
 ## 9. Reading Notes
-- [金字塔原理](多读书/金字塔原理.md)
-
+- [金字塔原理](reading-books/金字塔原理.md)
+    
 ## 10. Fitness Notes
