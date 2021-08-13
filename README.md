@@ -12,6 +12,7 @@
 - [Libvirt Create VM](openstack-nova/libvirt-create-vm.md)
 - [VM Evaluate](openstack-nova/vm-evaluate.md)
 - [vm cpu性能优化](openstack-nova/cpu优化.md)
+- [nova scheduler](openstack-nova/nova-scheduler.md)
 
 #### 1.1.2 Neutron
 
