@@ -1,5 +1,3 @@
-2021/5/20
-
 本文讨论KVM上性能调优问题。
 
 ```
@@ -10,7 +8,7 @@
 五、内存
 六、网络
 七、I/O
-八、总结
+八、参考
 ```
 
 ## 一、优化过程
@@ -23,7 +21,7 @@
 
 所以说优化、监测、测试通常是连在一起的，而且是一个循环而且长期的过程。
 
-![img.png](img.png)
+![img.png](images/img.png)
 
 通常监测的子系统有以下这些：
 
@@ -38,7 +36,7 @@
 
 ### 三、监控工具
 
-![img_1.png](img_1.png)
+![img_1.png](images/img_1.png)
 
 ## 四、CPU
 
@@ -72,4 +70,6 @@ NUMAM的内存分配策略有localalloc、preferred、membind、interleave. loca
 ## 六、网络
 ## 七、磁盘I/O
 优化包括: virtio-blk、缓存模式、aio、块设备io调度器 
-## 八、总结
+## 八、参考
+- [Linux 性能监测：介绍](https://linux.cn/article-1769-1.html)
+- [Linux 性能监测：CPU](https://linux.cn/article-1770-1.html)

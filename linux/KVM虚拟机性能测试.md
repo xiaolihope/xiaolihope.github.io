@@ -1,3 +1,4 @@
+性能测试工具
 
 ### 测试工具
 
@@ -33,16 +34,14 @@ CPU密集型 (eg. 科学计算)
 
 step1: 在非虚拟化的原生系统(Native)中执行某个基准测试程序
 
-step2:将该测试程序放到与原生系统配置相近的虚拟客户机中执行
+step2: 将该测试程序放到与原生系统配置相近的虚拟客户机中执行
 
-step3:
-对比在虚拟化和非虚拟化环境中该测试程序执行的性能. 实验环境: 修改宿主机上的参数.
+step3: 对比在虚拟化和非虚拟化环境中该测试程序执行的性能. 实验环境: 修改宿主机上的参数.
 原生系统是指物理机 客户机系统是指宿主机上的虚机. 两者的配置要一样!
 
-CPU: tools: SPECCPU2006 SPECjbb2005 UnixBench SysBench link:
+CPU: tools: SPECCPU2006 SPECjbb2005 UnixBench SysBench link
+
 www.spec.org 测试程序(CPU密集型):
     
-link: ubuntu tools
-http://www.howtogeek.com/111617/how-to-benchmark-your-linux-system-3-open-source-benchmarking-tools/
-kvm froum:
-https://www.linux-kvm.org/page/KVM_Forum
+[ubuntu tools]:http://www.howtogeek.com/111617/how-to-benchmark-your-linux-system-3-open-source-benchmarking-tools/
+[kvm forum]:https://www.linux-kvm.org/page/KVM_Forum

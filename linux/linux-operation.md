@@ -1,7 +1,4 @@
----
-date: 2017-02-27T17:51:32+08:00
-title: linux operation
----
+linux操作
 
 ## vnc
 ```
@@ -31,7 +28,6 @@ Done
 
 [upgrade 1404 to 1604]: http://www.tecmint.com/upgrade-ubuntu-14-04-to-16-04/
 
-
 ## Linux 创建 virtualenv
 
 ### virtualenv 的作用
@@ -57,7 +53,6 @@ virtualenv用于创建独立的Python环境，多个Python相互独立，互不�
 默认情况下，虚拟环境会依赖系统环境中的site package,就是说系统中已经安装好的第三方package也会安装在虚拟环境中，如果不想依赖这些package，
 那么可以加上参数 `no-site-packages` eg: `virtualenv --no-site-packages [env_name]`
 
-
 在虚拟环境中安装python套件时，如果没有没有启动虚拟环境，可以在 `~/.bashrc` 文件中加上：`export PIP_REQUIRE_VIRTUALENV=true` or
 `export PIP_REQUIRE_VIRTUALENV=true` 这样就可以安装到虚拟环境中。
 
@@ -74,16 +69,11 @@ Virtaulenvwrapper是virtualenv的扩展包，用于更方便管理虚拟环境�
 4. ...
 
 ### 安装 & 使用
-
 ```
 # pip install virtualenvwrapper
-
 ```
-
 `which virtualenvwrapper.sh` 找到安装目录为 `/usr/bin/virtualenvwrapper.sh` 打开这个文件可以看到安装步骤如下：
-
 ### Setup:
-
 ```
 #  1. Create a directory to hold the virtual environments.
 #     (mkdir $HOME/.virtualenvs).
@@ -101,34 +91,21 @@ Virtaulenvwrapper是virtualenv的扩展包，用于更方便管理虚拟环境�
 # 11. The virtual environment is activated.
 ```
 #### 列出env
-
 `workon`
-
 `lsvirtualenv`
-
 #### 启动／切换虚拟环境
-
 `workon [env_name]`
-
 #### 删除虚拟环境
-
 `rmvirtualenv [env_name]`
-
 #### 离开虚拟环境
-
 `deactivate`
-
-
 ## iptables
-
 ```commandline
 $ iptables-save
 
 $ iptables -t nat -A POSTROUTING -s 172.24.4.0/24 ! -d 172.24.4.0/24 -j MASQUERADE
 ```
-
 ## Linux 增加磁盘
-
 ```
 # lsblk
 # fdisk /dev/sdb
@@ -136,9 +113,7 @@ n
 w
 # mkfs.ext4 /dev/sdb
 ```
-
 ## Linux server安装GUI
-
 ```
 # yum groupinstall "GNOME Desktop" "Graphical Administration Tools"
 # ln -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target
