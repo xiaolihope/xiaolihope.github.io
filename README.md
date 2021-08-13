@@ -8,8 +8,9 @@
 - [MHA + MySQL主备](openstack-ha/MHA_MySQL_failover.md)
 
 ### 1.2 KVM performance tuning
-- [memory performance tuning](linux/memory_performance_tuning.md)
 - [KVM性能优化方案](linux/KVM性能优化方案.md)
+- [vm cpu性能优化](linux/cpu优化.md)
+- [内存性能优化](linux/内存优化.md)
 - [KVM虚拟机性能测试](linux/KVM虚拟机性能测试.md)
 - [linux perf related commands](linux/linux-perf-related-commands.md)
 - [linux memory performance test tool](linux/linux_memory_performance_test_tool.md)
@@ -26,7 +27,7 @@
 - [Nova boot vm](openstack-nova/boot-vm-from-iso.md)
 - [Libvirt Create VM](openstack-nova/libvirt-create-vm.md)
 - [VM Evaluate](openstack-nova/vm-evaluate.md)
-- [vm cpu性能优化](openstack-nova/cpu优化.md)
+
 - [nova scheduler](openstack-nova/nova-scheduler.md)
 
 #### 1.3.2 Neutron
