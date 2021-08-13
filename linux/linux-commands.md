@@ -1,15 +1,7 @@
----
-date: 2016-12-07T10:46:41+08:00
-title: Linux Commands
----
-## service related
+2016/12/07
+## Linux基础命令
 
-```
-$ sudo journalctl -u weave.service
-$ systemctl restart/start/stop <service.name>
-
-```
-## nc: NetCat
+### 1. nc: NetCat
 ```
 $ yum install -y nmap-ncat
 功能：
@@ -17,7 +9,7 @@ $ yum install -y nmap-ncat
 user cases：
 ref：http://www.linuxso.com/command/nc.html
 ```
-## Screen
+### 2. Screen
 ```bash
     1. screen -r screen-name
     2. screen -r -D screen-name //强制进入已经attached 的screen
@@ -626,3 +618,23 @@ http://www.linuxidc.com/Linux/2012-06/62664.htm
 
 ## jq
 jq命令允许直接在命令行下对JSON进行操作，包括分片、过滤、转换等
+
+### 日志文件/var/log/messages
+
+### 查看服务性能情况
+常用命令
+```
+free -h
+df -h
+top
+lsblk
+```
+
+### 文本处理
+```
+sed
+awk
+grep
+tail
+head
+```

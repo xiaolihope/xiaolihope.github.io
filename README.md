@@ -78,36 +78,41 @@
 - [linux perf related commands](linux/linux-perf-related-commands.md)
 - [linux memory performance test tool](linux/linux_memory_performance_test_tool.md)
 - [linux内存管理](linux/linux内存管理.md)
+- [linux基础](linux/linux-commands.md)
+- [linux操作](linux/linux-operation.md)
 
 ## 5. Develop Base Knowledge
 - [Getting go started](develop/getting-go-started.md)
 - [Python多线程](develop/python并发编程与多线程.md)
 - [Python知识点](develop/python.md)
-- [算法](develop/algorithm.md)
 - [python py27 debug](develop/python27-test-debug.md)
 - [sqlalchemy](develop/sqlqlchemy.md)
-- [dataset operation](develop/dataset.md)
+
 - [design-pattern](develop/design-pattern.md)
 - [git](develop/git.md)
-- [linux commands](develop/linux-commands.md)
-- [linux operation](develop/linux-operation.md)
 - [screen](develop/screem.md)
-- [database summary](develop/database-summary.md)
-- [HA](develop/HA.md)
+
 - [JAVA多线程](develop/java多线程.md)
 - [Pycharm配置远程项目]
 - [Windows](develop/windows.md)
 
+## 6. 数据库
+- [触发器](database/trigger.md)
+- [database summary](database/database-summary.md)
+- [dataset operation](database/dataset.md)
 
-## 6. DeepLearning
+## 7. 算法
+- [算法](algorithm/algorithm.md)
+
+## 8. DeepLearning
 - [Datasets Label](AI-DeepLearning/datasets-label.md)
 
-## 7. MachineLearning
+## 9. MachineLearning
 - [Pycaret](AI-MachineLearning/PyCaret.md)
 - [NaiveBayes](AI-MachineLearning/NaiveBayes.pdf)
 - [BaynesNetwork](AI-MachineLearning/bayesNetwork-dxl.pdf)
 
-## 8. Reading Notes
+## 10. Reading Notes
 - [金字塔原理](多读书/金字塔原理.md)
 
-## 9. Fitness Notes
+## 11. Fitness Notes
