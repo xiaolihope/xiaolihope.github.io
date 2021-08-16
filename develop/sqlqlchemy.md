@@ -1,14 +1,9 @@
----
-date: 2017-04-13T18:55:04+08:00
-title: sqlalchemy
----
+2017/04/13
 
 ## Introduction
-
 SQLAlchemy是Python的ORM框架，它的理念是：数据库的量级和性能重要于对象集合，而对象集合的抽象又重要于表和行。
 
 ## Setup
-
 ```
 $ pip install sqlalchemy
 ```
