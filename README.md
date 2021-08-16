@@ -27,7 +27,6 @@
 - [Nova boot vm](openstack-nova/boot-vm-from-iso.md)
 - [Libvirt Create VM](openstack-nova/libvirt-create-vm.md)
 - [VM Evaluate](openstack-nova/vm-evaluate.md)
-
 - [nova scheduler](openstack-nova/nova-scheduler.md)
 
 #### 1.3.2 Neutron
@@ -53,7 +52,6 @@
 #### 1.3.7 Services
 - [redis]
 - [mongodb]
-
 
 ### 1.4 OpenStack Base
 - [eventlet](openstack-base/eventlet.md)
@@ -83,18 +81,15 @@
 
 ## 3. Cloud Computing SaaS
 
-
 ## 4. Develop Base Knowledge
 - [Getting go started](develop/getting-go-started.md)
 - [Python多线程](develop/python并发编程与多线程.md)
 - [Python知识点](develop/python.md)
 - [python py27 debug](develop/python27-test-debug.md)
 - [sqlalchemy](develop/sqlqlchemy.md)
-
-- [design-pattern](develop/design-pattern.md)
 - [git](develop/git.md)
 - [screen](develop/screem.md)
-
+- [design-pattern](develop/design-pattern.md)
 - [JAVA多线程](develop/java多线程.md)
 - [Pycharm配置远程项目]
 - [Windows](develop/windows.md)
@@ -113,9 +108,11 @@
 ## 8. MachineLearning
 - [Pycaret](AI-MachineLearning/PyCaret.md)
 - [NaiveBayes](AI-MachineLearning/NaiveBayes.pdf)
-- [BaynesNetwork](AI-MachineLearning/bayesNetwork-dxl.pdf)
+- [BayesNetwork](AI-MachineLearning/bayesNetwork-dxl.pdf)
 
-## 9. Reading Notes
+## 9. Big Data
+
+## 10. Reading Notes
 - [金字塔原理](reading-books/金字塔原理.md)
     
-## 10. Fitness Notes
+## 11. Fitness Notes
