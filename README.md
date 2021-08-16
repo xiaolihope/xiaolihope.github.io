@@ -9,14 +9,14 @@
 
 ### 1.2 KVM performance tuning
 - [KVM性能优化方案](linux/KVM性能优化方案.md)
-- [vm cpu性能优化](linux/cpu优化.md)
+- [VM CPU性能优化](linux/cpu优化.md)
 - [内存性能优化](linux/内存优化.md)
 - [KVM虚拟机性能测试](linux/KVM虚拟机性能测试.md)
 - [Linux性能查看](linux/linux-perf-related-commands.md)
-- [linux内存性能测试工具](linux/linux_memory_performance_test_tool.md)
-- [linux内存管理](linux/linux内存管理.md)
-- [linux基础](linux/linux-commands.md)
-- [linux操作](linux/linux-operation.md)
+- [Linux内存性能测试工具](linux/linux_memory_performance_test_tool.md)
+- [Linux内存管理](linux/linux内存管理.md)
+- [Linux基础](linux/linux-commands.md)
+- [Linux操作](linux/linux-operation.md)
 
 ### 1.3 OpenStack Components
 #### 1.3.1 Nova
@@ -27,7 +27,7 @@
 - [Nova boot vm](openstack-nova/boot-vm-from-iso.md)
 - [Libvirt Create VM](openstack-nova/libvirt-create-vm.md)
 - [VM Evaluate](openstack-nova/vm-evaluate.md)
-- [nova scheduler](openstack-nova/nova-scheduler.md)
+- [Nova scheduler](openstack-nova/nova-scheduler.md)
 
 #### 1.3.2 Neutron
 
@@ -35,8 +35,8 @@
 
 #### 1.3.4 Heat
 - [Getting Started with HEAT](openstack-heat/getting-started-with-heat.md)
-- [ansible heat integration](openstack-heat/ansible_heat_integration.md)
-- [debug software config](openstack-heat/debug-sc.md)
+- [Ansible Heat Integration](openstack-heat/ansible_heat_integration.md)
+- [Debug Software Config](openstack-heat/debug-sc.md)
 - [Heat Guide](openstack-heat/Heat-guide.md)
 
 #### 1.3.5 Trove
@@ -91,7 +91,7 @@
 - [screen](develop/screem.md)
 - [design-pattern](develop/design-pattern.md)
 - [JAVA多线程](develop/java多线程.md)
-- [Pycharm配置远程项目]
+- [Pycharm配置远程项目](develop/pycharm.md)
 - [Windows](develop/windows.md)
 
 ## 5. 数据库

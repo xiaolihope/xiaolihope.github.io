@@ -1,5 +1,6 @@
 # Trouble Shooting
-date: 2017-05-10T10:39:30+08:00
+
+2017/05/10
 
 ## 1. Trove instance stuck in BUILD state
 

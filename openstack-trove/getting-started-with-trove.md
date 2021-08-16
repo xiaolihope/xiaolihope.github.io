@@ -1,6 +1,6 @@
 # Getting Started with Trove
 
-date: 2017-10-27T09:33:12+08:00
+2017/10/27
 
 ## DBaaS
 ### 定义

@@ -1,4 +1,5 @@
 ## 一、概念
+
 1. cluster，k8s or swarm 的集群，以前叫bay
      1.1 cluster中的infrastructure包含：
      
@@ -92,7 +93,7 @@ The browser can be accessed at http://localhost:8001/ui
 Flannel: host-gw 
 ## 八、magnum手动安装笔记
 1. 创建db
-```markdown
+```
 # mysql -uroot -ptuscloud
 CREATE DATABASE magnum;
 GRANT ALL PRIVILEGES ON magnum.* TO 'magnum'@'localhost' \
@@ -103,7 +104,7 @@ Query OK, 0 rows affected (0.00 sec)
 ```
 
 2. keystone中创建相关资源
-```markdown
+```
 160 . openrcv3
 161 openstack user create --domain default --password-prompt magnum
 162 openstack role add --project service --user magnum admin
@@ -120,23 +121,23 @@ created by magnum" magnum
 3. 安装 magnum 
 进入到docker中
 
-```markdown
+```
 # yum install centos-release-openstack-rocky -y
 # yum install openstack-magnum-api openstack-magnum-conductor python-magnumclient
 ```
 
 4. 配置magnum 文件
-```markdown
+```
 -rw-r----- 1 root magnum 74315 May 15 15:25 magnum.conf
 ```
 
 5. Populate db: 
-```markdown
+```
 su -s /bin/sh -c "magnum-db-manage upgrade" magnum
 ```
 
 6. 用screen 启动magnum 服务
-```markdown
+```
 /usr/bin/python /usr/bin/magnum-api —cogfile=/var/log/magnum/api.log
 /usr/bin/python /usr/bin/magnum-conductor —logfile=/var/log/magnum/conductor.log
 ```
@@ -144,7 +145,7 @@ su -s /bin/sh -c "magnum-db-manage upgrade" magnum
 7. Quick start
 https://docs.openstack.org/magnum/rocky/contributor/quickstart.html
 8. Using magnum
-```markdown
+```
 * Step1: upload image from tuscloud manager ui, and then update image by:
 # bzip2 -dk coreos_production_openstack_image.img.bz2
 # qemu-img convert -f raw -O qcow2 coreos_production_openstack_image.img coreos_production_openstack_image.qcow2
@@ -168,9 +169,11 @@ Fix:
 cerror3: 
 ```
 ## 九、magnum代码分析
+
 9.1 cluster 创建过程分析
+
 1. api接受创建cluster的api请求
-```markdown
+```
 dixiaoli-repos/magnum/magnum/api/controllers/v1/bay.py
 @base.Controller.api_version("1.1", "1.1")
 @expose.expose(Bay, body=Bay, status_code=201)
@@ -188,8 +191,9 @@ def post(self, bay):
 ```
 
 2. 请求通过rpc转发给conductor
-dixiaoli-repos/magnum/magnum/conductor/handlers/cluster_conductor.py
-```markdown
+`dixiaoli-repos/magnum/magnum/conductor/handlers/cluster_conductor.py`
+   
+```
 def cluster_create(self, context, cluster, create_timeout):
     LOG.debug('cluster_heat cluster_create')
     osc = clients.OpenStackClients(context)
@@ -228,7 +232,7 @@ Conductor 会被bay 创建密钥，然后拿到cluster heat driver，然后调�
 3. 调用heat，创建stack
 dixiaoli-repos/magnum/magnum/drivers/heat/driver.py
 
-```markdown
+```
 def create_cluster(self, context, cluster, cluster_create_timeout):
     stack = self._create_stack(context, clients.OpenStackClients(context),
                                cluster, cluster_create_timeout)
@@ -300,7 +304,7 @@ class AtomicK8sTemplateDefinition(kftd.K8sFedoraTemplateDefinition):
 
 4. 调用heat 创建stack之前需要先构造参数
 dixiaoli-repos/magnum/magnum/drivers/heat/k8s_coreos_template_def.py
-```markdown
+```
 def get_env_files(self, cluster_template, cluster):
     env_files = []
     # template_def.add_priv_net_env_file(env_files, cluster_template)
@@ -320,7 +324,7 @@ def add_priv_net_env_file(env_files, cluster_template):
 ```
 
 
-十、创建cluster，新增nova server的boot option参数，从创建cluster，labels传入，如下：
-```markdown
+## 十、创建cluster，新增nova server的boot option参数，从创建cluster，labels传入，如下：
+```
 openstack coe cluster create --cluster-template k8s-cluster-template-coreos --docker-volume-size 3 --keypair dxl-key --master-count 1 --node-count 1 --flavor 0134be66-1d98-4c8b-aad2-642aa8b56fbc --labels instance_store_type=local,instance_store_uuid=a3239e52-2902-44ac-81ff-3c28ead35e98,image_store_type=local,image_store_uuid=a3239e52-2902-44ac-81ff-3c28ead35e98 k8s-c1
 ```

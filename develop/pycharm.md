@@ -1,0 +1,1 @@
+## 一、pycharm连接远程代码1.下载pycharm商用版2.创建一个空项目，配置deployment如下![](images/clipboard.png)![](images/clipboard2.png)![](images/clipboard3.png)3. 在项目文件夹上，右键下载代码![](images/clipboard4.png)
