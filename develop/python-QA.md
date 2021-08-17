@@ -1,1 +1,1 @@
-本文总结python常见知识点。## 1. python生成器## 2. python装饰器，以及作用
+本文总结python常见知识点。## 1. python迭代器和生成器## 2. python装饰器，以及作用## 3. python list切片a[start:end:scan]## 4. 字符串拼接- +号- str.join()- str.format- %## 5. re.match() re.search()re.match() 决定RE是否在字符串刚开始的未知匹配re.search() 扫描字符串，找到这个RE匹配的位置re.findall() 以列表形式返回所有匹配的字符re.finditer() 返回string中所有与pattern相匹配的全部字串，返回形式为迭代器re.group()分组## python 闭包
