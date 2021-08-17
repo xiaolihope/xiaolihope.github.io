@@ -1,1 +1,1 @@
-## Nova Architecture
+本文学习nova的架构```nova-apinova-conductornova-schedulernova-computenova-cellnova-placement```## Nova Architecture### Nova Scheduler### Nova Cell### Nova placement

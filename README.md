@@ -21,13 +21,9 @@
 ### 1.3 OpenStack Components
 #### 1.3.1 Nova
 - [Getting Started with Nova](openstack-nova/Getting-Started-with-Nova.md)
-- [Nova Placement](openstack-nova/nova-placement.md)
-- [Nova Cell](openstack-nova/nova-cell.md)
-- [Nova Create VM Analysis](openstack-nova/Nova-Create-VM.md)
+- [Nova主要操作流程](openstack-nova/Nova-code-analysis.md)
 - [Nova boot vm](openstack-nova/boot-vm-from-iso.md)
 - [Libvirt Create VM](openstack-nova/libvirt-create-vm.md)
-- [VM Evaluate](openstack-nova/vm-evaluate.md)
-- [Nova scheduler](openstack-nova/nova-scheduler.md)
 
 #### 1.3.2 Neutron
 
