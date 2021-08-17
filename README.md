@@ -19,6 +19,7 @@
 - [Linux操作](linux/linux-operation.md)
 
 ### 1.3 OpenStack Components
+
 #### 1.3.1 Nova
 - [Getting Started with Nova](openstack-nova/Getting-Started-with-Nova.md)
 - [Nova主要操作流程](openstack-nova/Nova-code-analysis.md)
@@ -26,7 +27,7 @@
 - [Libvirt Create VM](openstack-nova/libvirt-create-vm.md)
 
 #### 1.3.2 Neutron
-
+-[]()
 #### 1.3.3 Cinder
 
 #### 1.3.4 Heat
@@ -45,10 +46,6 @@
 #### 1.3.6 Magnum
 - [Getting Started with MAGNUM](openstack-magnum/getting-started-with-magnum.md)
 
-#### 1.3.7 Services
-- [redis]
-- [mongodb]
-
 ### 1.4 OpenStack Base
 - [eventlet](openstack-base/eventlet.md)
 - [AMQP](openstack-base/AMQP.md)
@@ -61,7 +58,7 @@
 - [ovs](openstack-base/ovs.md)
 - [rabbitmq](openstack-base/rabbitmq.md)
 - [virsh](openstack-base/virsh.md)
-
+- [Q&A](openstack-base/openstack-QA.md)
 ### 1.5 OpenStack Deploy
 - [Kolla Ansible](openstack-deploy/kolla-ansible.md)
 - [Ubuntu Install Ussuri OpenStack By Kolla](openstack-deploy/ubuntu-install-kolla.md)
