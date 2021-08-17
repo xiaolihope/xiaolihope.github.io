@@ -77,7 +77,7 @@
 
 ## 4. Develop Base Knowledge
 - [Getting go started](develop/getting-go-started.md)
-- [Python多线程](develop/python并发编程与多线程.md)
+- [Python并发编程与多线程](develop/python并发编程与多线程.md)
 - [Python知识点](develop/python.md)
 - [python py27 debug](develop/python27-test-debug.md)
 - [sqlalchemy](develop/sqlqlchemy.md)
