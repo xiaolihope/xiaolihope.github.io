@@ -1,11 +1,7 @@
----
-title: Virsh
-date: 2019-08-26
----
-
+2019/08/26
+本文记录virsh常用命令
 ## virsh 常用命令
-
-```markdown
+```
 # virsh --help                                     #查看命令帮忙
 # virsh list                                       #显示正在运行的虚拟机
 # virsh list --all                                 #显示所有的虚拟机
@@ -33,15 +29,17 @@ date: 2019-08-26
 ```
 ## virsh console 登陆虚拟机
 有两种方法可以登陆virsh创建的虚拟机，
+
 第一种：vnc, 用virsh vncdisplay <vm_name>,得到:0，然后用vnc viewer，输入宿主机ip：0,进入到虚拟机；
+
 第二种：virsh console
 
 第一步：添加ttyS0的许可，允许root登陆
-```markdown
+```
 # echo "ttyS0" >> /etc/securetty
 ```
 第二步：在宿主机上测试连接
-```markdown
+```
 [root@study ~]# virsh list
  Id    Name                           State
 ----------------------------------------------------
@@ -72,7 +70,7 @@ KVM默认情况下是由QEMU在Linux的用户空间模拟出来的并提供给�
 
 半虚拟化使用virtio技术，virtio驱动因为改造了虚拟机的操作系统，让虚拟机可以直接和虚拟化层通信，从而大大提高了虚拟机性能。
 
-```markdown
+```
 [root@kvm-server ~]# virsh domiflist vm-node1
 Interface  Type       Source     Model       MAC
 -------------------------------------------------------
@@ -120,7 +118,7 @@ raw：是简单的二进制镜像文件，一次性会把分配的磁盘空间�
 
 qcow2：第二代的QEMU写时复制格式，支持很多特性，如快照、在不支持稀疏特性的文件系统上也支持精简方式、AES加密、zlib压缩、后备方式。
 
-```markdown
+```
 [root@kvm-server ~]# qemu-img create -f raw /Data/vm-node1-10G.raw 10G                                #创建raw格式并且大小为10G的磁盘
 Formatting '/Data/vm-node1-10G.raw', fmt=raw size=10737418240 
 
@@ -185,7 +183,7 @@ Format specific information:
 ## 克隆虚拟机
 
 使用virt-clone克隆虚拟机的方法：
-```markdown
+```
 [root@kvm-server ~]# virsh shutdown CentOS-7.2-x86_64                                                      #必须要关机才能进行克隆
 Domain CentOS-7.2-x86_64 is being shutdown
 
@@ -210,7 +208,7 @@ Clone 'vm-node2' created successfully.
 
 ## 修改虚拟机名字
 
-```markdown
+```
 [root@kvm-server ~]# virsh shutdown CentOS-7.2-x86_64                                                         #需要先关机，然后对虚拟机进行改名
 [root@kvm-server ~]# cp /etc/libvirt/qemu/vm-node2.xml /etc/libvirt/qemu/vm-test.xml                          #拷贝xml文件为要修改的名称，如:vm-test
 [root@kvm-server ~]# grep '<name>' /etc/libvirt/qemu/vm-test.xml                                              #修改vm-test.xml中的name字段为vm-test

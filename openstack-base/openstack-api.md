@@ -1,4 +1,4 @@
-*date = "2016-12-09T00:18:36+08:00"*
+2016/12/09
 
 ## OpenStack Restful API
 
@@ -53,7 +53,7 @@ v1 = v1.Controller()表示，当访问的是GET /v1或者GET /v1/...时，请求
 pecan 中的【url-mapping】
 
 ### 开发步骤
-
+```
 1.  初始化一个openstack 项目
 2. Oslo-config-generator 生成config 文件: oslo-config-generator --config-file config-generator.conf
 3. 初始化db：transformer-db-manage --config-dir /etc/transformer/transformer.conf upgrade head
@@ -97,7 +97,7 @@ pecan 中的【url-mapping】
     1.  curl -g -i -X GET http://localhost:8787/v1/tags -H "Accept: application/json" 
      ```
 6. 和keystone整合
-
+```
 ## References
 
 openstack api服务blog from unitedstack

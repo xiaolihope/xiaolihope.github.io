@@ -1,18 +1,12 @@
----
-date: 2017-10-17T09:34:12+08:00
-title: Haproxy
----
-
 ## haproxy
 
-文档官网：http://cbonte.github.io/haproxy-dconv/
+[文档官网](http://cbonte.github.io/haproxy-dconv/)
 
 ### 简介及作用
 
 #### HAProxy 是什么
 
 * TCP 代理：可从监听 socket 接受 TCP 连接，然后自己连接到 server，HAProxy 将这些 sockets attach 到一起，使通信流量可双向流动。
-
 * HTTP 反向代理（在 HTTP 专用术语中，称为 gateway）：HAProxy 自身表现得就像一个 server，通过监听 socket 接受 HTTP 请求，然后与后端服务器建立连接，通过连接将请求转发给后端服务器。
 * SSL terminator / initiator / offloader: 客户端 -> HAProxy 的连接，以及 HAProxy -> server 端的连接都可以使用 SSL/TLS
 * TCP normalizer: 因为连接在本地操作系统处终结，client 和 server 端没有关联，所以不正常的 traffic 如 invalid packets, flag combinations, window advertisements, sequence numbers, incomplete connections(SYN floods) 不会传递给 server 端。这种机制可以保护脆弱的 TCP stacks 免遭协议上的攻击，也使得我们不必修改 server 端的 TCP 协议栈设置就可以优化与 client 的连接参数。

@@ -1,8 +1,5 @@
----
-date: 2017-11-02T14:19:18+08:00
-title: openstack 日志格式和收集内容
----
-
+2017/11/02
+# openstack 日志格式和收集内容
 ## 预备知识
 Openstack的日志由oslo.log统一管理，用法也很简单，导入oslo.log模块即可:
 ```
@@ -213,6 +210,3 @@ wsgi_log_format=%(client_ip)s "%(request_line)s" status: %(status_code)s len: %(
 
 ### Gnocchi
 * 所有ERROR日志
-
-f: http://blog.csdn.net/hackerain/article/details/7888686
-

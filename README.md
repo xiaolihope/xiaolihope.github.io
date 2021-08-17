@@ -51,15 +51,13 @@
 
 ### 1.4 OpenStack Base
 - [eventlet](openstack-base/eventlet.md)
-- [kvm](openstack-base/kvm.md)
 - [AMQP](openstack-base/AMQP.md)
 - [openstack api](openstack-base/openstack-api.md)
 - [openstack ceph](openstack-base/openstack-ceph.md)
 - [openstack local international](openstack-base/openstack-local-international.md)
 - [openstack log](openstack-base/openstack-log.md)
-- [openstack middleware](openstack-base/openstack-middleware.md)
 - [openstack periodic task](openstack-base/openstack-periodic_task.md)
-- [openstack services haproxy](openstack-base/openstack-services-haproxy.md)
+- [HAproxy](openstack-base/haproxy.md)
 - [ovs](openstack-base/ovs.md)
 - [rabbitmq](openstack-base/rabbitmq.md)
 - [virsh](openstack-base/virsh.md)

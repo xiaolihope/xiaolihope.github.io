@@ -1,7 +1,4 @@
----
-date: 2016-12-23T11:05:38+08:00
-title: RabbitMQ
----
+2016/12/23
 
 ## oslo.messaging RPC 简介
 
@@ -12,6 +9,7 @@ title: RabbitMQ
 你可以把它当做RabbitMQ,或是QPID，但你的操作都是针对transport的，底层是什么不用关心。
 获取一个transport很简单，用oslo_messaging.get_transport()函数就行了，其定义如下：
 oslo_messaging.get_transport(conf, url=None, allowed_remote_exmods=None, aliases=None)
+
 1.2 target
 
 对于message server, target代表了server监听的内容. 对于messge client, target代表了client要发送的目的地，

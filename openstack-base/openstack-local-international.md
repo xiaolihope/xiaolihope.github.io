@@ -1,7 +1,6 @@
----
-date: 2017-11-02T14:08:46+08:00
-title: openstack 国际化和本地化介绍和配置
----
+2017-11-02
+
+## openstack 国际化和本地化介绍和配置
 
 Openstack所有子项目的本地化工作主要由oslo_i18n项目实现，使用oslo_i18n的规范为：
 
@@ -103,6 +102,4 @@ Environment=LC_ALL=zh_CN.utf-8
 find /usr/share/locale/ -name "*.mo"
 ```
 实现源码通常在项目的locale目录,如nova源码为nova/locale。
-nova-compute汉化效果如下:
 
-![nova-compute-inter](../images/openstack-international.png)

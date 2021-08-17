@@ -1,7 +1,4 @@
----
-date: 2016-12-20T01:13:50+08:00
-title: ceph
----
+2016/12/20
 
 ## Configure cinder volume with ceph backend
 
@@ -15,7 +12,7 @@ title: ceph
 ```
 
 ### on the openstack environment (controller node)
-
+```
 step1:  install ceph client packages
 
     # sudo apt-get install ceph-common -y
@@ -43,7 +40,7 @@ step4: Add the keyrings for cinder-dxl  to cinder-volume nodes and change the ow
         # chown cinder:cinder ceph.client.cinder-dxl.keyring
         
 step5: also copied the admin keying to the compute nodes in order to make ceph command works.
-
+```
 ### configure openstack cinder to use ceph on the api nodes
 
 ```
@@ -96,8 +93,6 @@ step5: also copied the admin keying to the compute nodes in order to make ceph c
     # restart nova-compute service
 
 ```
-ref link http://docs.ceph.com/docs/master/rbd/rbd-openstack/
-and https://w3-connections.ibm.com/wikis/home?lang=en-us#!/wiki/W2e52de5e48f0_4f00_a00f_5ce1f8e43d09/page/Setup%20Ceph%20Cluster%20in%20Honor
 
 ## ceph commands
 

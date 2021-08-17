@@ -1,12 +1,7 @@
----
-title: "OVS"
-date: 2019-08-27
----
+本文总结ovs常用命令。
 
 ## ovs-vsctl commands
-
-
-```markdown
+```
 # ovs-vsctl add-br <bridge_name>                 // 创建网桥
 # ovs-vsctl add-port <bridge_name> <nic_name>    // 网桥添加端口
 
@@ -23,7 +18,7 @@ date: 2019-08-27
 ```
 
 ## ovs-ofctl commands
-```markdown
+```
 # ovs-ofctl show br-eth1                           // 查看网桥详细信息
 ```
 

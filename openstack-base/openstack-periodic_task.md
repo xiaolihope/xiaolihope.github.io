@@ -1,9 +1,6 @@
----
-date: 2017-11-06T17:57:53+08:00
-title: openstack periodic_task
----
+2017/11/06
 
-# Openstack 周期性任务
+# Openstack periodic_task 周期性任务
 
 ## 需求
 
@@ -40,7 +37,4 @@ def _instance_usage_audit(self, context):
 * http://gtcsq.readthedocs.io/en/latest/openstack/periodic_task.html
 * https://docs.openstack.org/oslo.service/latest/reference/loopingcall.html
 * https://docs.openstack.org/oslo.service/latest/reference/periodic_task.html
-
-good link:
-
 * http://gtcsq.readthedocs.io/en/latest/openstack/periodic_task.html
