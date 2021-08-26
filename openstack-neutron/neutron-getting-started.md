@@ -1,0 +1,1 @@
+## Self Service Network and Provider Networkself-service network称为租户网络。self service 模式主要是在控制节点多了一个 L3 agent。顾名思义，也就是self-service有三层的服务；self-service就是neutron不依赖外部的网络和三层路由，租户自己通过ovs或者Linux bridge创建虚拟的路由来进行交换。provider network称为运营商网络。 对于neutron而言，这种网络类型是“没有”三层路由功能的，或者说没有自主的路由功能，他需要借助外部的网络，才能完成不同网络之间的路由。也就是说他的路由器或者三层网络服务是由openstack 之外的力量提供，因此被称为provider。

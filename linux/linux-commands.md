@@ -571,3 +571,14 @@ grep
 tail
 head
 ```
+### diff & patch
+```
+1. diff -urN <original.py> <new.py>
+生成的是统一格式的diff文件。
+
+2.patch 打补丁
+yum install patch -y
+安装补丁：patch -p1 < *.patch
+卸载补丁：patch -p1 -R < *.patch
+注意：cd 到的目录 + path文件头的目录（剥离层级） = 要打patch的文件
+```
