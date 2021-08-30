@@ -11,6 +11,7 @@
 - [KVM性能优化方案](linux/KVM性能优化方案.md)
 - [VM CPU性能优化](linux/cpu优化.md)
 - [内存性能优化](linux/内存优化.md)
+- [KVM动态内存](linux/KVM动态内存.md)
 - [KVM虚拟机性能测试](linux/KVM虚拟机性能测试.md)
 - [Linux性能查看](linux/linux-perf-related-commands.md)
 - [Linux内存性能测试工具](linux/linux_memory_performance_test_tool.md)
