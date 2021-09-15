@@ -119,3 +119,7 @@ w
 # ln -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target
 # reboot
 ```
+## ubuntu修改编辑器
+```
+# update-alternatives --config editor
+```
