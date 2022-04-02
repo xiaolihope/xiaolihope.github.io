@@ -5,20 +5,20 @@
 PyCaret本质上是Python的包装器，它围绕着多个机器学习库和框架，
 例如scikit-learn，XGBoost，Microsoft LightGBM，spaCy等。
 
-
 ## 模块
 PyCaret中目前支持以下有监督和无监督模型：
 
 - 有监督学习模型
 1. 分类[Classification](https://pycaret.org/clf101/)
+
     1.1 分类指标：
-        - Accuracy：预测对的样本占所有样本的百分比
-        - AUC(Area under the curve),用于评价二值分类器，值越大，表示分类效果越好
-        - Recall：召回率：表示原样本中的正样本有多少被预测正确了
-        - Precision：正确率
-        - F1: 正确率和召回率的调和平均数，最大为1，最小为0。F1分数认为召回率和精确率同等重要
-        - Kappa：多分类模型准确度的评估，值越高代表模型实现的分类准确度越高；
-        - MCC：马修斯相关系数，衡量不平衡数据集的指标比较好
+   - Accuracy：预测对的样本占所有样本的百分比
+   - AUC(Area under the curve),用于评价二值分类器，值越大，表示分类效果越好
+   - Recall：召回率：表示原样本中的正样本有多少被预测正确了
+   - Precision：正确率
+   - F1: 正确率和召回率的调和平均数，最大为1，最小为0。F1分数认为召回率和精确率同等重要
+   - Kappa：多分类模型准确度的评估，值越高代表模型实现的分类准确度越高；
+   - MCC：马修斯相关系数，衡量不平衡数据集的指标比较好
 2. 回归 [Regression](https://pycaret.org/reg101/)
 
 - 无监督学习模型
