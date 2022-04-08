@@ -8,7 +8,7 @@ PyCaret本质上是Python的包装器，它围绕着多个机器学习库和框�
 ## 模块
 PyCaret中目前支持以下有监督和无监督模型：
 
-- 有监督学习模型
+- 有监督学习模型(有标注数据)
 1. 分类[Classification](https://pycaret.org/clf101/)
 
    1.1 分类指标：
@@ -21,8 +21,12 @@ PyCaret中目前支持以下有监督和无监督模型：
    - MCC：马修斯相关系数，衡量不平衡数据集的指标比较好
 
 2. 回归 [Regression](https://pycaret.org/reg101/)
+   - 线性回归
+   - k进邻
+   - 逻辑回归
 
-- 无监督学习模型
+- 无监督学习模型(没有输出)
+
 1. 聚类 [Clustering](https://pycaret.org/clu101/)
 2. 异常检测 [Anomaly Detection](https://pycaret.org/ano101/)
 3. 自然语言处理[Natural Language Processiong](https://pycaret.org/nlp101/)
